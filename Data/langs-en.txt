@@ -1,0 +1,203 @@
+Options
+Rooms List
+Join #help
+Connect to kalamngy
+Register
+Change
+Restore
+Fast Commands
+Script help Link
+Clear Screen
+All
+Room Setting
+Auto Join
+Action
+Amsg
+Search
+Staff Commands
+Remove Ban-List
+Topic Change
+Close Room
+Notice On Screen
+Copy Nickname
+Nick Info
+Ignore
+Add
+Remove
+Invite
+Hammers
+Manager
+Admin
+Owner
+Host
+Star
+Silent
+Minute
+Hour
+Kick
+Bad Behavior
+Bad Nickname
+Ban
+Unban
+Sound Welcomes
+Welcomes
+General
+Welcomes
+For Nickname
+Flowers
+Hearts
+Colours
+Others
+Start Help
+Finish Help
+DeHost
+DeVoice
+Unban-Server
+Add badnick
+Del badnick
+Join New Room
+The number of allowed welcomes: 4 lines every half a minute for each room.. Wait a little bit
+The number of allowed action lines: 2 lines every half a minute.. Wait a little bit
+This device has a virus that has corrupted the main mIRC.exe file ... Scan your PC with an antivirus ... We recommend using NOD32 antivirus
+The script files responsible for the appearance of shapes and emojis do not work correctly or do not exist.. to solve the problem:
+1. Close all previously open mIRC.exe scripts and run the mIRC.exe script again
+2. Change the antivirus and then re-download the script ... We recommend downloading Antivirus Nod32
+3. Talk to one of the administration officials
+Request Verified Passport
+Passport Verify
+Report this room
+Nick History
+Report
+Blacklist
+Bad Nickname
+Swearing
+Spam
+Other Reason
+Private Room Commands
+Private Room UserList
+Manage UserList
+Emotion Dialog
+Welcome auto hammer
+Star to Passport only
+Bad Word Protection
+Manage BadWords
+Fix Room
+Topic Lock
+Topic Unlock
+Blacklist Link
+Display matched word
+Repeat Protection
+Login
+Nickname:
+Password:
+Font Color
+Bold
+Italic
+Underline
+Other
+Status:
+Welcome:
+Close Private
+Allow welcome Sounds
+Allow (kick, private, hummers) Sounds
+Time Line Color:
+Show ip on joins/parts
+Nickname and Password Setting
+Report Type:
+Reason:
+Other options
+instruction
+Visit
+Save
+Cancel
+Who Unbanned
+Fast Welcome Msgs Edit
+Away
+Notify Words
+Activate
+Manage
+*** This Option is special for the Private rooms
+*** Room UserList Activated For
+*** Room UserList DeActivated For
+*** User has been added to Room UserList through Gata
+*** User has been added to Room UserList through Nickname Only
+*** User has been deleted from Room UserList
+*** Bad Word Protection Activated For
+*** Bad Word Protection DeActivated For
+*** Repeat Protection Activated For
+*** Repeat Protection DeActivated For
+*** Who Unbanned Activated For
+*** Who Unbanned DeActivated For
+*** Auto Join room Activated For
+*** Auto Join room DeActivated For
+*** Welcome auto hammer Activated For
+*** Welcome auto hammer DeActivated For
+Confirm code
+Show/Hide Nofification
+Disable Translation
+Close
+Room name:
+*** Fill all the fields ***
+Searching for update
+You have the lastest Version
+Connecting to kalamngychat.com.
+The web colours after number 15 Converted in mIRC to the closest variant from the 1st 15 one
+To use the Fast Commands , Pres and mark the nickname on the nicklist or on the main , then Press the Functions keys in the top of your keyboard
+An update has been issued to the Chat mIRC Script
+Press Update , to automatically update to the new version
+Or/ Press Download to Manually Download the Full new Version
+Update
+Download
+Trying to connect after 10 seconds.
+Court
+Nickname Report
+Room Report
+List
+Last left / kicked Visitors of
+Radio
+last 2 minutes
+last 5 minutes
+last 15 minutes
+last 30 minutes
+last 60 minutes
+Font Size :
+Nickname 1
+Nickname 2
+Auto Connect
+Connect
+Auto Join rooms
+This is a Registered nickname
+What is Your Password?
+Disconnect
+Connecting now...
+Copy Colored Text
+Colorize your text as you like by adding the color codes then copy the text
+more
+Copy
+Topic
+Input
+less
+Direct Send
+Clear Blacklist
+Edit Auto Join Rooms
+up
+down
+delete
+Status bar
+Tray icon
+mIRC minimize to :
+Auto away:
+after
+min
+Report Check
+Edit Notication words
+Click to Open Text File
+Down
+Write Your #room
+Write Your Action
+Send To all Rooms
+set Topic:
+Write Your Notice
+Enter Reason
+Write Your Requested Passport
+set Ip

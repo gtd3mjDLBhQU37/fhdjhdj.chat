@@ -1,0 +1,12 @@
+1 ÊÑÍíÈ ÓÑíÚ íãßäß ÊÚÏíáå ßíİãÇ ÔÆÊ
+2 ÊÑÍíÈ ÓÑíÚ íãßäß ÊÚÏíáå ßíİãÇ ÔÆÊ ÑŞã 2
+3 ÊÑÍíÈ ÓÑíÚ íãßäß ÊÚÏíáå ßíİãÇ ÔÆÊ ÑŞã 3
+4 ÊÑÍíÈ ÓÑíÚ íãßäß ÊÚÏíáå ßíİãÇ ÔÆÊ ÑŞã 4
+5 ÊÑÍíÈ ÓÑíÚ íãßäß ÊÚÏíáå ßíİãÇ ÔÆÊ ÑŞã5
+6 ÊÑÍíÈ ÓÑíÚ íãßäß ÊÚÏíáå ßíİãÇ ÔÆÊ ÑŞã 6
+7 Fast Welcome msg no 7 , you can edit this line through the Fast Welcome manager , Press right click on the Status Window
+8 Fast Welcome msg no 8 , you can edit this line through the Fast Welcome manager , Press right click on the Status Window
+9 Fast Welcome msg no 9 , you can edit this line through the Fast Welcome manager , Press right click on the Status Window
+10 Fast Welcome msg no 10 , you can edit this line through the Fast Welcome manager , Press right click on the Status Window
+11 Fast Welcome msg no 11 , you can edit this line through the Fast Welcome manager , Press right click on the Status Window
+12 Fast Welcome msg no 12 , you can edit this line through the Fast Welcome manager , Press right click on the Status Window

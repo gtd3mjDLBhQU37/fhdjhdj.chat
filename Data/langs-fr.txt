@@ -1,0 +1,203 @@
+paramètres
+liste des chambres
+Entrée #help-et-Plaintes
+Contactez le chat
+enregistrement
+Changer
+Restaurer
+Raccourcis des commandes rapides
+Lien pour expliquer le script
+Effacer l'écran
+toutes les pages
+Réglage de la pièce
+entrée automatique
+action
+Messages toutes les chambres
+recherche
+commandes d'administration
+Enquête du lait n'est pas
+changer le nom de l'image
+Chambre pour fermer
+Alerte spéciale - Avis
+copies Nom
+données lui
+ignorer
+ajouter
+effacer
+Une invitation
+marteaux
+manager
+admin
+honneur
+hôte
+étoile
+silencieux
+minute
+heure
+expulsion
+mauvais comportement
+Pseudonyme mauvais
+interdire
+Dairy Enquête
+Trahib voix
+Trahib
+général
+Trahib
+lien vers
+Rose
+cœur
+couleurs
+formulaires
+Aide départ
+Aide fin
+Supprimer l'hôte
+Retirez l'étoile
+Enquête qui surfeur
+Ajouter une mauvaise réputation
+Enquête mauvaise réputation
+Entrée de nouvelles chambres
+The number of allowed welcomes: 4 lines every half a minute for each room.. Wait a little bit
+The number of allowed action lines: 2 lines every half a minute.. Wait a little bit
+This device has a virus that has corrupted the main mIRC.exe file ... Scan your PC with an antivirus ... We recommend using NOD32 antivirus
+The script files responsible for the appearance of shapes and emojis do not work correctly or do not exist.. to solve the problem:
+1. Close all previously open mIRC.exe scripts and run the mIRC.exe script again
+2. Change the antivirus and then re-download the script ... We recommend downloading Antivirus Nod32
+3. Talk to one of the administration officials
+Demander un passeport vérifié
+Vérification du passeport
+Signaler la chambres
+Histoire de Nick
+Rapport
+Liste noire
+Mauvais surnom
+Jurant
+Spam
+Autre raison
+des salles privées Liste d'utilisateurs
+Liste d'utilisateurs automatique
+Gérer la liste des utilisateurs
+Dialogue d'Emotion
+Welcome auto hammer
+Star to Passport only
+Protection des mots incorrects
+Gérer les mauvais mots
+Pièce fixe
+Verrouillage du sujet
+Déverrouillage du sujet
+Lien de la liste noire
+Afficher le mot correspondant
+Répéter la protection
+s'identifier
+Surnom:
+Mot de passe:
+Couleur de la police
+gras
+Italique
+souligné
+Autre
+Statut:
+Bienvenue:
+Fermer privé
+Autoriser les sons de bienvenue
+Autoriser Sons (botter hummers privés)
+Couleur chronologie
+Afficher l'IP sur les jointures / pièces
+Réglage du Surnom et du mot de passe
+Type de rapport:
+Raison:
+Autres options
+instruction
+Visite
+Save
+Annuler
+Qui a été interdit
+Modification de la réponse personnalisée
+une façon
+Notifier les mots
+Activer
+Gérer
+*** Cette option est spéciale pour les chambres privées
+*** Liste d'utilisateurs de la salle privée activée pour
+*** Liste d'utilisateurs de la salle privée désactivée pour
+*** L'utilisateur a été ajouté à la liste des utilisateurs de la salle via Gata
+*** L'utilisateur a été ajouté à la liste d'utilisateurs de la salle via le pseudonyme uniquement
+*** L'utilisateur a été supprimé de la liste des utilisateurs de la salle
+*** Protection des mots incorrects activée pour
+*** Protection des mots incorrects désactivée pour
+*** Répéter la protection activée pour
+*** Répéter la protection désactivée pour
+*** Qui a été interdit activée pour
+*** Qui a été interdit désactivée pour
+*** Rejoindre automatiquement la salle activé pour
+*** Rejoindre automatiquement la salle désactivée pour
+*** Welcome auto hammer activé pour
+*** Welcome auto hammer désactivée pour
+Confirm code
+Afficher/Masquer la notification
+Disable Translation
+proche
+Nom de la salle:
+*** Remplir tous les champs ***
+Recherche de mise à jour
+Vous avez la dernière version
+Connexion à kalamngychat.com.
+Les couleurs web après le numéro 15 Converties en mIRC vers la variante la plus proche du 1er 15
+Pour utiliser les commandes rapides, appuyez sur et marquez le surnom sur la liste des pseudos ou sur le principal, puis appuyez sur les touches de fonctions en haut de votre clavier.
+Une mise à jour a été publiée pour le script Chat mIRC
+Appuyez sur Mettre à jour pour mettre à jour automatiquement vers la nouvelle version
+Ou/ Appuyez sur Télécharger pour télécharger manuellement la nouvelle version complète
+Mettre à jour
+Télécharger
+Tentative de connexion après 10 secondes.
+Rechercher
+rapport de surnom
+rapport de chambre
+Liste
+Dernier gauche / kické Visiteurs de
+Radio
+2 dernières minutes
+5 dernières minutes
+15 dernières minutes
+30 dernières minutes
+60 dernières minutes
+taille de police :
+Surnom 1
+Surnom 2
+Connexion automatique
+Connecter
+Modifier la jointure automatique
+Ceci est un surnom enregistré
+Quel est ton mot de passe?
+déconnecter
+De liaison...
+Copier du texte en couleur
+Colorisez votre texte comme bon vous semble en ajoutant les codes couleurs puis copiez le texte
+plus
+Copie
+Sujet
+Saisir
+moins
+envoi direct
+Effacer la liste noire
+modifier les salles de jointure automatique
+en haut
+bas
+supprimer
+Status bar
+Tray icon
+mIRC minimize to :
+Auto away:
+après
+min
+Vérification du rapport
+Modifier les mots de notification
+Cliquez pour ouvrir le fichier texte
+Bas
+Write Your #room
+Write Your Action
+Send To all Rooms
+set Topic:
+Write Your Notice
+Enter Reason
+Write Your Requested Passport
+set Ip

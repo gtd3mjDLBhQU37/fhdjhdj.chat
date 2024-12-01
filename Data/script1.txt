@@ -1,0 +1,3001 @@
+dialog kalamngy {
+  title "Kalamngy Chat Setting"
+  size -1 -1 168 275
+  option dbu
+  button "Save", 14, 38 262 40 12, ok
+  button "Cancel", 15, 81 262 40 12, cancel
+  box "General", 27, 7 1 155 43
+  text "Language - «Œ «— «··€… :", 28, 13 10 65 7
+  combo 29, 86 9 50 63, hsbar drop
+  combo 4, 86 21 50 68, size drop
+  text "Font Size", 3, 13 22 65 8
+  tab "Nickname 1", 5, 6 67 160 193
+  check "Pass:", 2, 11 121 45 7, tab 5
+  edit "", 10, 59 120 93 11, tab 5 autohs
+  edit "", 9, 59 109 93 11, tab 5 %defaultnick.1 autohs
+  combo 13, 9 141 40 10, tab 5 drop
+  check "Bold", 11, 54 143 24 7, tab 5
+  check "Italic", 16, 85 143 30 7, tab 5
+  check "Underline", 17, 118 143 37 7, tab 5
+  check "Time Line Color:", 25, 11 235 65 7, tab 5
+  combo 26, 80 234 40 10, tab 5 drop
+  check "Show ip on joins/parts", 30, 11 225 100 7, tab 5
+  check "Allow (kick private hummers) Sounds", 24, 11 215 125 7, tab 5
+  check "Allow welcome Sounds", 18, 11 205 85 7, tab 5
+  check "Close Private", 12, 11 195 49 7, tab 5
+  edit "", 19, 53 162 80 11, tab 5 %statusmsg.1 autohs
+  edit "", 20, 53 173 80 11, tab 5 %privatewelcome.1 autohs
+  check "Status:", 22, 11 165 35 7, tab 5
+  check "Welcome:", 23, 11 175 40 7, tab 5
+  check "Auto Connect", 37, 11 92 50 8, tab 5
+  button "Connect", 58, 94 81 56 10, tab 5
+  check "Enable", 36, 11 84 50 8, tab 5
+  box "Other", 21, 6 156 155 102, tab 5
+  box "Login", 7, 6 102 155 31, tab 5
+  text "Nickname:", 1, 11 111 45 7, tab 5
+  button "Edit Auto join", 38, 94 92 56 10, tab 5
+  box "Font Colour", 8, 6 133 155 22, tab 5
+  text "after", 68, 112 185 13 8, tab 5 center
+  edit "", 69, 127 184 17 10, tab 5 %autoawaymin.1
+  check "Auto away:", 66, 11 185 40 7, tab 5
+  edit "", 67, 53 184 58 11, tab 5 %autoaway.1 autohs
+  text "min", 70, 146 185 13 8, tab 5 center
+  icon 65, 136 164 15 15,  imgmirc\imgs\colorize.bmp, 0, tab 5
+  check "Notify Words:", 79, 11 246 53 7, tab 5
+  button "Edit Notify Words", 80, 80 245 56 10, tab 5
+  tab "Nickname 2", 6
+  check "Auto Connect", 40, 11 92 50 8, tab 6
+  check "Pass:", 41, 11 121 45 7, tab 6
+  edit "", 42, 59 120 93 11, tab 6 autohs
+  edit "", 43, 59 109 93 11, tab 6 %defaultnick.2 autohs
+  combo 44, 9 141 40 10, tab 6 drop
+  check "Bold", 45, 54 143 24 7, tab 6
+  check "Italic", 46, 85 143 30 7, tab 6
+  check "Underline", 47, 118 143 37 7, tab 6
+  edit "", 48, 53 162 80 11, tab 6 %statusmsg.2 autohs
+  edit "", 49, 53 173 80 11, tab 6 %privatewelcome.2 autohs
+  check "Status:", 50, 11 165 35 7, tab 6
+  check "Welcome:", 51, 11 175 40 7, tab 6
+  check "Close Private", 52, 11 195 49 7, tab 6
+  check "Allow welcome Sounds", 53, 11 205 85 7, tab 6
+  check "Allow (kick private hummers) Sounds", 54, 11 215 125 7, tab 6
+  check "Show ip on joins/parts", 55, 11 225 100 7, tab 6
+  check "Time Line Color:", 56, 11 235 65 7, tab 6
+  combo 57, 80 234 40 10, tab 6 drop
+  button "Connect", 59, 94 81 56 10, tab 6
+  check "Enable", 39, 11 84 50 8, tab 6
+  button "Edit Auto join", 60, 94 92 56 10, tab 6
+  box "Login", 61, 6 102 155 31, tab 6
+  text "Nickname:", 62, 11 111 45 7, tab 6
+  box "Other", 63, 6 156 155 102, tab 6
+  box "Font Colour", 64, 6 133 155 22, tab 6
+  check "Auto away:", 71, 11 185 40 7, tab 6
+  edit "", 72, 53 184 58 11, tab 6 %autoaway.2 autohs
+  text "after", 73, 112 185 13 8, tab 6 center
+  edit "", 74, 127 184 17 10, tab 6 %autoawaymin.2
+  text "min", 75, 146 185 13 8, tab 6 center
+  icon 78, 136 164 15 15,  imgmirc\imgs\colorize.bmp, 0, tab 6
+  check "Notify Words:", 81, 11 246 53 7, tab 6
+  button "Edit Notify Words", 82, 80 245 56 10, tab 6
+  box "Nickname and Password Setting", 31, 7 46 155 22
+  button "Register", 32, 10 53 35 12
+  button "Confirm code", 35, 47 53 35 12
+  button "Change pass", 33, 85 53 35 12
+  button "Restore pass", 34, 122 53 35 12
+  text "mIRC minimize to", 76, 13 33 65 8
+  combo 77, 86 32 50 68, size drop
+}
+
+
+on *:DIALOG:kalamngy:init:*: { 
+  !.dll $dlls(colorcombo) COMBO kalamngy 13
+  !.dll $dlls(colorcombo) COMBO kalamngy 44
+  !.dll $dlls(colorcombo) COMBO kalamngy 26
+  !.dll $dlls(colorcombo) COMBO kalamngy 57
+  didtok $dname 29 44 en - English,ar - «·⁄—»Ì…,fr - French
+  didtok $dname 4 44 10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30
+  didtok $dname 77 44 $langs(186) , $langs(187)
+  did -a $dname 76 $langs(188)
+  if (%lang == en) did -c $dname 29 1
+  elseif (%lang == ar) did -c $dname 29 2
+  elseif (%lang == fr) did -c $dname 29 3
+  else did -c $dname 29 1
+  did -c $dname 4 $calc(%fontsize - 9)
+  did -c $dname 77 %mircminimize
+  did -a $dname 7,61 $langs(90)
+  did -a $dname 1,62 $langs(91)
+  did -a $dname 2,41 $langs(92)
+  did -a $dname 3 $langs(163)
+  did -a $dname 5 $langs(164)
+  did -a $dname 6 $langs(165)
+  did -a $dname 37,40 $langs(166)
+  did -a $dname 58,59 $langs(167)
+  did -a $dname 38,60 $langs(168)
+  did -a $dname 27 $langs(44)
+  did -a $dname 8,64 $langs(93)
+  did -a $dname 11,45 $langs(94)
+  did -a $dname 16,46 $langs(95)
+  did -a $dname 17,47 $langs(96)
+  did -a $dname 21,63 $langs(97)
+  did -a $dname 22,50 $langs(98)
+  did -a $dname 23,51 $langs(99)
+  did -a $dname 12,52 $langs(100)
+  did -a $dname 18,53 $langs(101)
+  did -a $dname 24,54 $langs(102)
+  did -a $dname 25,56 $langs(103)
+  did -a $dname 30,55 $langs(104)
+  did -a $dname 66,71 $langs(189)
+  did -a $dname 68,73 $langs(190)
+  did -a $dname 70,75 $langs(191)
+  did -a $dname 79,81 $langs(116)
+  did -a $dname 80,82 $langs(193)
+  did -a $dname 31 $langs(105)
+  did -a $dname 32 $langs(5)
+  did -a $dname 33 $langs(6)
+  did -a $dname 34 $langs(7)
+  did -a $dname 35 $langs(135)
+  did -a $dname 36,39 $langs(117)
+  did -a $dname 14 $langs(111)
+  did -a $dname 15 $langs(112)
+  did -c $dname 13 $calc(%color.1 +2)
+  did -c $dname 44 $calc(%color.2 +2)
+  did -a $dname 9 %defaultnick.1
+  did -a $dname 43 %defaultnick.2
+  did -a $dname 19 %statusmsg.1
+  did -a $dname 48 %statusmsg.2
+  did -a $dname 67 %autoaway.1
+  did -a $dname 72 %autoaway.2
+  did -a $dname 69 %autoawaymin.1
+  did -a $dname 74 %autoawaymin.2
+  did -a $dname 20 %privatewelcome.1
+  did -a $dname 49 %privatewelcome.2
+  if (%nickenable.1 == on) did -c $dname 36
+  if (%nickenable.2 == on) did -c $dname 39
+  if (%nickautoconnect.1 == on) did -c $dname 37
+  if (%nickautoconnect.2 == on) did -c $dname 40
+  if (%statusmsgon.1 != on) did -m $dname 19
+  if (%statusmsgon.2 != on) did -m $dname 48
+  if (%statusmsgon.1 == on) did -c $dname 22
+  if (%statusmsgon.2 == on) did -c $dname 50
+  if (%autoawayon.1 != on) did -m $dname 67,69
+  if (%autoawayon.2 != on) did -m $dname 72,74
+  if (%autoawayon.1 == on) did -c $dname 66
+  if (%autoawayon.2 == on) did -c $dname 71
+  if (%privatewelcomeon.1 != on) did -m $dname 20
+  if (%privatewelcomeon.2 != on) did -m $dname 49
+  if (%privatewelcomeon.1 == on) did -c $dname 23
+  if (%privatewelcomeon.2 == on) did -c $dname 51
+  if (%notifywords.1 != on) did -b $dname 80
+  if (%notifywords.2 != on) did -b $dname 82
+  if (%notifywords.1 == on) did -c $dname 79
+  if (%notifywords.2 == on) did -c $dname 81
+  if (%password.1) { did -a $dname 10 %password.1 | did -c $dname 2 }
+  if (%password.2) { did -a $dname 42 %password.2 | did -c $dname 41 }
+  if (!%password.1) did -m $dname 10
+  if (!%password.2) did -m $dname 42
+  if (%bold.1 == on) { did -c $dname 11 }
+  if (%bold.2 == on) { did -c $dname 45 }
+  if (%italic.1 == on) { did -c $dname 16 }
+  if (%italic.2 == on) { did -c $dname 46 }
+  if (%underline.1 == on) { did -c $dname 17 }
+  if (%underline.2 == on) { did -c $dname 47 }
+  if (%private.1 == on) { did -c $dname 12 }
+  if (%private.2 == on) { did -c $dname 52 }
+  if (%wsounds.1 == on) { did -c $dname 18 }
+  if (%wsounds.2 == on) { did -c $dname 53 }
+  if (%msounds.1 == on) { did -c $dname 24 }
+  if (%msounds.2 == on) { did -c $dname 54 }
+  if (%showip.1 == on) { did -c $dname 30 }
+  if (%showip.2 == on) { did -c $dname 55 }
+  if (%timecolorstatus.1 == on) { did -c $dname 25 }
+  if (%timecolorstatus.2 == on) { did -c $dname 56 }
+  did -c $dname 26 $calc(%timecolor.1 +2)
+  did -c $dname 57 $calc(%timecolor.2 +2)
+  if ($sock(sockbot.1).status == active) did -a $dname 58 $langs(171)
+  if ($sock(sockbot.2).status == active) did -a $dname 59 $langs(171)
+  if (%nickenable.1 != on) did -b $dname 37,58,38,1,9,2,10,7,8,13,11,16,17,21,22,19,23,20,12,18,24,30,25,26,65,66,67,68,69,70,79,80
+  if (%nickenable.2 != on) did -b $dname 40,59,60,61,62,43,41,42,64,44,45,46,47,63,50,48,51,49,52,53,54,55,56,57,78,71,72,73,74,75,81,82
+  if (!%defaultnick.1) did -b $dname 37,58
+  if (!%defaultnick.2) did -b $dname 40,59
+}
+on *:DIALOG:kalamngy:sclick:4: {
+  set %fontsize $did(4)
+  font -z %fontsize tahoma
+}
+on *:DIALOG:kalamngy:sclick:77: {
+  set %mircminimize $did(77).sel
+  tray -t $+ $calc(%mircminimize - 1)
+}
+on *:DIALOG:kalamngy:sclick:29: {
+  set %lang $gettok($did(29),1,32)
+  loadlangs
+  did -o $dname 77 1 $langs(186)
+  did -o $dname 77 2 $langs(187)
+  did -c $dname 77 %mircminimize
+  did -a $dname 76 $langs(188)
+  did -a $dname 7,61 $langs(90)
+  did -a $dname 1,62 $langs(91)
+  did -a $dname 2,41 $langs(92)
+  did -a $dname 3 $langs(163)
+  did -a $dname 5 $langs(164)
+  did -a $dname 6 $langs(165)
+  did -a $dname 37,40 $langs(166)
+  did -a $dname 58,59 $langs(167)
+  did -a $dname 38,60 $langs(168)
+  did -a $dname 27 $langs(44)
+  did -a $dname 8,64 $langs(93)
+  did -a $dname 11,45 $langs(94)
+  did -a $dname 16,46 $langs(95)
+  did -a $dname 17,47 $langs(96)
+  did -a $dname 21,63 $langs(97)
+  did -a $dname 22,50 $langs(98)
+  did -a $dname 23,51 $langs(99)
+  did -a $dname 12,52 $langs(100)
+  did -a $dname 18,53 $langs(101)
+  did -a $dname 24,54 $langs(102)
+  did -a $dname 25,56 $langs(103)
+  did -a $dname 30,55 $langs(104)
+  did -a $dname 66,71 $langs(189)
+  did -a $dname 68,73 $langs(190)
+  did -a $dname 70,75 $langs(191)
+  did -a $dname 79,81 $langs(116)
+  did -a $dname 80,82 $langs(193)
+  did -a $dname 31 $langs(105)
+  did -a $dname 32 $langs(5)
+  did -a $dname 33 $langs(6)
+  did -a $dname 34 $langs(7)
+  did -a $dname 35 $langs(135)
+  did -a $dname 36,39 $langs(117)
+  did -a $dname 14 $langs(111)
+  did -a $dname 15 $langs(112)
+  xdid -t tbar1 7 $utfencode(ï $langs(70))
+  if ($status == connected) xdid -t tbar1 6 $utfencode(ï $langs(171))
+  else xdid -t tbar1 6 $utfencode(ï $langs(167))
+  if ($sock(sockbot.1).status == active) did -a $dname 58 $langs(171)
+  if ($sock(sockbot.2).status == active) did -a $dname 59 $langs(171)
+}
+on *:DIALOG:kalamngy:sclick:36: { 
+  if ($did(36).state) {
+    did -e $dname 38,1,9,2,10,7,8,13,11,16,17,21,22,19,23,20,12,18,24,30,25,26,65,66,67,68,69,70,79,80
+    if (%defaultnick.1) did -e $dname 37,58
+  }
+  else did -b $dname 37,58,38,1,9,2,10,7,8,13,11,16,17,21,22,19,23,20,12,18,24,30,25,26,65,66,67,68,69,70,79,80
+}
+on *:DIALOG:kalamngy:sclick:39: { 
+  if ($did(39).state) { 
+    did -e $dname 60,61,62,43,41,42,64,44,45,46,47,63,50,48,51,49,52,53,54,55,56,57,78,71,72,73,74,75,81,82
+    if (%defaultnick.2) did -e $dname 40,59
+  }
+  else did -b $dname 40,59,60,61,62,43,41,42,64,44,45,46,47,63,50,48,51,49,52,53,54,55,56,57,78,71,72,73,74,75,81,82
+}
+on *:DIALOG:kalamngy:sclick:2: { 
+  if ($did(2).state) {
+    did -n $dname 10 
+  }
+  else { 
+    did -rm $dname 10
+    unset %password.1
+  }
+}
+on *:DIALOG:kalamngy:sclick:41: { 
+  if ($did(41).state) {
+    did -n $dname 42 
+  }
+  else { 
+    did -rm $dname 42
+    unset %password.2
+  }
+}
+on *:DIALOG:kalamngy:sclick:22: { 
+  if ($did(22).state) {
+    did -n $dname 19
+    set %statusmsgon.1 on
+  }
+  else {
+    did -m $dname 19
+    set %statusmsgon.1 off
+  }
+}
+on *:DIALOG:kalamngy:sclick:50: { 
+  if ($did(50).state) {
+    did -n $dname 48
+    set %statusmsgon.2 on
+  }
+  else {
+    did -m $dname 48
+    set %statusmsgon.2 off
+  }
+}
+on *:DIALOG:kalamngy:sclick:79: { 
+  if ($did(79).state) {
+    did -e $dname 80
+    set %notifywords.1 on
+  }
+  else {
+    did -b $dname 80
+    set %notifywords.1 off
+  }
+}
+on *:DIALOG:kalamngy:sclick:81: { 
+  if ($did(81).state) {
+    did -e $dname 82
+    set %notifywords.2 on
+  }
+  else {
+    did -b $dname 82
+    set %notifywords.2 off
+  }
+}
+on *:DIALOG:kalamngy:sclick:66: { 
+  if ($did(66).state) {
+    did -n $dname 67,69
+    set %autoawayon.1 on
+    autoawaytrigger
+  }
+  else {
+    did -m $dname 67,69
+    set %autoawayon.1 off
+    .timerautoaway1 off
+  }
+}
+on *:DIALOG:kalamngy:sclick:71: { 
+  if ($did(71).state) {
+    did -n $dname 72,74
+    set %autoawayon.2 on
+    autoawaytrigger
+  }
+  else {
+    did -m $dname 72,74
+    set %autoawayon.2 off
+    .timerautoaway2 off
+  }
+}
+on *:DIALOG:kalamngy:sclick:23: { 
+  if ($did(23).state) {
+    did -n $dname 20 
+    set %privatewelcomeon.1 on
+  }
+  else { 
+    did -m $dname 20
+    set %privatewelcomeon.1 off
+  }
+}
+on *:DIALOG:kalamngy:sclick:51: { 
+  if ($did(51).state) {
+    did -n $dname 49 
+    set %privatewelcomeon.2 on
+  }
+  else { 
+    did -m $dname 49
+    set %privatewelcomeon.2 off
+  }
+}
+on *:DIALOG:kalamngy:sclick:37: { 
+  if ($did(37).state) {
+    if ($did(9)) && (%defaultnick.1 != $did(9)) { set %defaultnick.1 $did(9) }
+    if ($sock(sockbot.1).status != active) && (%defaultnick.1) connectcmd 1
+  }
+}
+on *:DIALOG:kalamngy:sclick:40: { 
+  if ($did(40).state) {
+    if ($did(43)) && (%defaultnick.2 != $did(43)) { set %defaultnick.2 $did(43) }
+    if ($sock(sockbot.2).status != active) && (%defaultnick.2) connectcmd 2
+  }
+}
+on *:DIALOG:kalamngy:edit:9: {
+  did -e $dname 37,58
+}
+on *:DIALOG:kalamngy:edit:43: {
+  did -e $dname 40,59
+}
+on *:DIALOG:kalamngy:sclick:65,78: {
+  EmotionDialog options
+}
+on *:DIALOG:kalamngy:sclick:38: { 
+  autojoinEditor 1
+}
+on *:DIALOG:kalamngy:sclick:60: { 
+  autojoinEditor 2
+}
+on *:DIALOG:kalamngy:sclick:80: { 
+  notifywordsEditor 1
+}
+on *:DIALOG:kalamngy:sclick:82: { 
+  notifywordsEditor 2
+}
+on *:DIALOG:kalamngy:sclick:58: { 
+  if ($did(9)) && (%defaultnick.1 != $did(9)) { set %defaultnick.1 $did(9) }
+  if (%defaultnick.1) connectcmd 1
+}
+on *:DIALOG:kalamngy:sclick:59: { 
+  if ($did(43)) && (%defaultnick.2 != $did(43)) { set %defaultnick.2 $did(43) }
+  if (%defaultnick.2) connectcmd 2
+}
+alias kalamngytab {
+  if ($did(kalamngy,9).visible == $true) return 1
+  if ($did(kalamngy,43).visible == $true) return 2
+}
+on *:DIALOG:kalamngy:sclick:32: { 
+  kalamngyregister $kalamngytab
+}
+on *:DIALOG:kalamngy:sclick:33: { 
+  kalamngypasschange $kalamngytab
+}
+on *:DIALOG:kalamngy:sclick:34: { 
+  kalamngypassrestore $kalamngytab
+}
+on *:DIALOG:kalamngy:sclick:35: { 
+  kalamngycodeconfirm $kalamngytab
+}
+on *:DIALOG:kalamngy:sclick:14: {
+  if (%autoawaymin.1 !isnum 1-999) set %autoawaymin.1 60
+  if (%autoawaymin.2 !isnum 1-999) set %autoawaymin.2 60
+  if ($did(11).state) set %bold.1 on
+  if (!$did(11).state) set %bold.1 off
+  if ($did(45).state) set %bold.2 on
+  if (!$did(45).state) set %bold.2 off
+  if ($did(16).state) set %italic.1 on
+  if (!$did(16).state) set %italic.1 off
+  if ($did(46).state) set %italic.2 on
+  if (!$did(46).state) set %italic.2 off
+  if ($did(17).state) set %underline.1 on
+  if (!$did(17).state) set %underline.1 off
+  if ($did(47).state) set %underline.2 on
+  if (!$did(47).state) set %underline.2 off
+  if ($did(18).state) set %wsounds.1 on
+  if (!$did(18).state) set %wsounds.1 off
+  if ($did(53).state) set %wsounds.2 on
+  if (!$did(53).state) set %wsounds.2 off
+  if ($did(24).state) set %msounds.1 on
+  if (!$did(24).state) set %msounds.1 off
+  if ($did(54).state) set %msounds.2 on
+  if (!$did(54).state) set %msounds.2 off
+  if ($did(25).state) set %timecolorstatus.1 on
+  if (!$did(25).state) set %timecolorstatus.1 off
+  if ($did(56).state) set %timecolorstatus.2 on
+  if (!$did(56).state) set %timecolorstatus.2 off
+  if ($did(30).state) set %showip.1 on
+  if (!$did(30).state) set %showip.1 off
+  if ($did(55).state) set %showip.2 on
+  if (!$did(55).state) set %showip.2 off
+  set %timecolor.1 $calc($did(26) -1)
+  if (%timecolor.1 == -1) %timecolor.1 = 01
+  if ($len(%timecolor.1) == 1) %timecolor.1 = 0 $+ %timecolor.1
+  set %timecolor.2 $calc($did(57) -1)
+  if (%timecolor.2 == -1) %timecolor.2 = 01
+  if ($len(%timecolor.2) == 1) %timecolor.2 = 0 $+ %timecolor.2
+  set %color.1 $calc($did(13) -1)
+  if (%color.1 == -1) %color.1 = 01
+  if ($len(%color.1) == 1) %color.1 = 0 $+ %color.1
+  set %finalcolor.1  $+ %color.1 $+ $iif($did(11).state,) $+ $iif($did(17).state,) $+ $iif($did(16).state,$chr(18)) 
+  set %finalcolour.1  $+ %color.1 $+ $iif($did(11).state,) $+ $iif($did(17).state,) 
+  set %color.2 $calc($did(44) -1)
+  if (%color.2 == -1) %color.2 = 01
+  if ($len(%color.2) == 1) %color.2 = 0 $+ %color.2
+  set %finalcolor.2  $+ %color.2 $+ $iif($did(45).state,) $+ $iif($did(47).state,) $+ $iif($did(46).state,$chr(18)) 
+  set %finalcolour.2  $+ %color.2 $+ $iif($did(45).state,) $+ $iif($did(47).state,) 
+  set %lang $gettok($did(29),1,32)
+  if ($did(37).state) set %nickautoconnect.1 on
+  if (!$did(37).state) unset %nickautoconnect.1
+  if ($did(36).state) set %nickenable.1 on
+  if (!$did(36).state) unset %nickenable.1
+  if (!$did(9)) {
+    unset %defaultnick.1 , %password.1
+  }
+  if (%nickenable.1 == on) {
+    if ($did(12).state) && (%private.1 == off) { set %private.1 on | if ($sock(sockbot.1).status == active) scid %cidno.1 mode $scid(%cidno.1).me +D } 
+    if (!$did(12).state) && (%private.1 == on) { set %private.1 off | if ($sock(sockbot.1).status == active) scid %cidno.1 mode $scid(%cidno.1).me -D }
+    if ($did(9)) && ((%defaultnick.1 != $did(9)) || ($scid(%cidno.1).me != $setting(defaultnick1))) { set %defaultnick.1 $did(9) | $iif(%cidno.1,scid %cidno.1 nick $setting(defaultnick1)) }
+    if ($did(10)) { if ($sock(sockbot.1).status == active) $iif($sock(sockbot.1).status == active,scid %cidno.1 login $did(10)) | set %password.1 $did(10) }
+  }
+  if ($did(39).state) set %nickenable.2 on
+  if (!$did(39).state) unset %nickenable.2
+  if ($did(40).state) set %nickautoconnect.2 on
+  if (!$did(40).state) unset %nickautoconnect.2
+  if (!$did(43)) {
+    unset %nickenable.2 , %defaultnick.2 , %password.2
+  }
+  if (%nickenable.2 == on) {
+    if ($did(52).state) && (%private.2 == off) { set %private.2 on | if ($sock(sockbot.2).status == active) scid %cidno.2 mode $scid(%cidno.2).me +D } 
+    if (!$did(52).state) && (%private.2 == on) { set %private.2 off | if ($sock(sockbot.2).status == active) scid %cidno.2 mode $scid(%cidno.2).me -D }
+    if ($did(43)) && ((%defaultnick.2 != $did(43)) || ($scid(%cidno.2).me != $setting(defaultnick2))) { set %defaultnick.2 $did(43) | $iif(%cidno.2,scid %cidno.2 nick $setting(defaultnick2)) }
+    if ($did(42)) { if ($sock(sockbot.2).status == active) $iif($sock(sockbot.2).status == active,scid %cidno.2 login $did(42)) | set %password.2 $did(42) }
+  }
+  loadlangs 
+  !.dll -u $dlls(colorcombo)
+}
+alias passwordrequired {
+  if ($2) {
+    var %temp $?=" $1 $crlf $+  $langs(169) $crlf $+  $langs(170) " 
+    if (%temp) { 
+      set %password. [ $+ [ $2 ] ] %temp
+      login %temp
+      if ($dialog(kalamngy)) { 
+        if ($2 = 1) { did -ran kalamngy 10 %temp | did -c kalamngy 2 }
+        if ($2 = 2) { did -ran kalamngy 42 %temp | did -c kalamngy 41 }
+      }
+    }
+  }
+}
+alias kalamngysetup {
+  if ($dialog(kalamngy)) { dialog -o kalamngy }
+  else { dialog -mh kalamngy kalamngy }
+  if ($1 == 1) did -f kalamngy 5
+  if ($1 == 2) did -f kalamngy 6
+  if (!$1) {
+    if ($me == $setting(defaultnick1)) did -f kalamngy 5
+    elseif ($me == $setting(defaultnick2)) did -f kalamngy 6
+  }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog ReportDialog {
+  title "Report - Press F5 to show"
+  size -1 -1 157 89
+  option dbu
+  tab "Nickname Report", 1, -3 -2 160 91
+  combo 2, 58 20 95 60, tab 1 size drop
+  edit "", 3, 58 35 69 12, tab 1 autohs
+  button "List", 4, 129 35 23 12
+  text "Nickname:", 11, 2 35 50 10, tab 1 right
+  tab "Room Report", 5
+  combo 6, 58 20 95 60, disable tab 5 size drop
+  edit "", 7, 58 35 69 12, tab 5 autohs
+  text "Room name:", 14, 2 35 50 10, tab 5 right
+  text "Report Type:", 8, 2 20 50 10, right
+  button "Report", 9, 41 71 37 12, ok
+  button "Cancel", 10, 86 71 37 12, cancel
+  text "Reason:", 12, 3 50 50 10, right
+  edit "", 13, 58 50 95 12, autohs
+  text "*** Fill all the fields ***", 15, 0 62 156 8, hide center
+  text "room", 19, 7 135 80 8, hide
+}
+on *:DIALOG:ReportDialog:init:*: { 
+  if ($active ischan) {
+    did -a $dname 3 $snick($active,1)
+    did -a $dname 7 $active
+  }
+  else {
+    did -a $dname 3 $active
+    did -h $dname 4,5
+  }
+  did -a $dname 19 $active
+  did -a $dname 1 $langs(153)
+  did -a $dname 5 $langs(154)
+  did -a $dname 4 $langs(155)
+  didtok $dname 2 44 $langs(71)
+  didtok $dname 2 44 $langs(72)
+  didtok $dname 2 44 $langs(73)
+  didtok $dname 2 44 $langs(74)
+  didtok $dname 2 44 $langs(75)
+  didtok $dname 6 44 $langs(68)
+  did -c $dname 2,6 1
+  did -a $dname 9 $langs(70)
+  did -a $dname 10 $langs(112)
+  did -a $dname 11 $langs(91)
+  did -a $dname 14 $langs(139)
+  did -a $dname 8 $langs(106)
+  did -a $dname 12 $langs(107)
+  did -a $dname 15 $langs(140)
+  did -f $dname 13
+}
+on *:DIALOG:ReportDialog:sclick:1,5: { 
+  did -nrf $dname 7,3,13
+  did -c $dname 2,6 1
+  did -h $dname 15
+  did -a $dname 3 $snick($active,1)
+  if ($active ischan) did -a $dname 7 $active
+}
+on *:DIALOG:ReportDialog:sclick:2: { 
+  if ($did(2).sel == 1) || ($did(2).sel == 5) {
+    did -fnr $dname 13
+  }
+  else {
+    did -rma $dname 13 $did(2)
+  }
+}
+on *:DIALOG:ReportDialog:sclick:4: { 
+  if ($dialog($dname).tab == 1) VisitorsHistory 
+  if ($dialog($dname).tab == 5) roomlistdiag 
+}
+on *:DIALOG:ReportDialog:sclick:9: { 
+  if ($dialog($dname).tab == 1) {
+    if (!$did(13) || !$did(3)) {
+      did -v $dname 15
+      halt
+    }
+    var %nick $did(3)
+    var %active $iif($did(19),$did(19),noactive)
+    if ($did(2).sel == 1) { reportbaduser 01 UserReportCommand: Blacklist: %active %nick $did(13) }
+    if ($did(2).sel == 2) { reportbaduser 01 UserReportCommand: BadNickname: %active %nick $did(13) }
+    if ($did(2).sel == 3) { reportbaduser 01 UserReportCommand: Swearing: %active %nick $did(13) }
+    if ($did(2).sel == 4) { reportbaduser 01 UserReportCommand: Spam: %active %nick $did(13) }
+    if ($did(2).sel == 5) { reportbaduser 01 UserReportCommand: OtherReason: %active %nick $did(13) }
+  }
+  if ($dialog($dname).tab == 5) {
+    if (!$did(13) || !$did(7)) {
+      did -v $dname 15
+      halt
+    }
+    var %room $did(7)
+    reportbadroom 01 RoomReportCommand: %room $did(13)
+    window -c @ $+ $window(Channels List).wid
+  }
+}
+alias ReportDialog {
+  if ($dialog(ReportDialog)) { dialog -x ReportDialog }
+  else { 
+    dialog -mh ReportDialog ReportDialog 
+    if ($1 == room) did -f ReportDialog 5,13
+  }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog VisitorsHistory {
+  title "Visitors History"
+  size -1 -1 165 191
+  option dbu
+  list 1, 0 36 167 135, sort size hsbar vsbar
+  text "Last Visitors of", 2, 2 6 164 9, center
+  button "Report", 3, 35 174 37 12, ok
+  button "Cancel", 4, 89 174 37 12, cancel
+  text "room", 5, 1 15 164 9, center
+  combo 6, 53 25 70 50, size drop
+}
+on *:DIALOG:VisitorsHistory:init:*: { 
+  did -a $dname 5 $active
+  did -a $dname 2 $langs(156)
+  did -a $dname 3 $langs(70)
+  did -a $dname 4 $langs(112)
+  didtok $dname 6 44 $langs(158)
+  didtok $dname 6 44 $langs(159)
+  didtok $dname 6 44 $langs(160)
+  didtok $dname 6 44 $langs(161)
+  didtok $dname 6 44 $langs(162)
+  did -c $dname 6 1
+  VisitorsHistoryloader 120
+}
+on *:DIALOG:VisitorsHistory:dclick:1: { 
+  if ($dialog(ReportDialog)) { 
+    did -nr ReportDialog 3
+    did -f ReportDialog 1,13
+    did -a ReportDialog 3 $did(1).seltext
+    dialog -x VisitorsHistory
+  }
+}
+on *:DIALOG:VisitorsHistory:sclick:3: { 
+  if ($dialog(ReportDialog)) { 
+    did -nr ReportDialog 3
+    did -f ReportDialog 1,13
+    did -a ReportDialog 3 $did(1).seltext
+  }
+}
+on *:DIALOG:VisitorsHistory:sclick:6: { 
+  if ($did(6).sel == 1) var %time 120
+  if ($did(6).sel == 2) var %time 300
+  if ($did(6).sel == 3) var %time 900
+  if ($did(6).sel == 4) var %time 1800
+  if ($did(6).sel == 5) var %time 3600
+  did -a $dname 5 $active
+  VisitorsHistoryloader %time
+}
+alias VisitorsHistoryloader {
+  did -r VisitorsHistory 1
+  var %x 1,%y $hget(VisitorsHistory. $+ $active,0).item
+  while (%x <= %y) {
+    var %name $hget(VisitorsHistory. $+ $active, %x).item
+    var %data $hget(VisitorsHistory. $+ $active, %name)
+    if ($calc($ctime - %data) < $1) { 
+      did -a VisitorsHistory 1 %name
+    }
+    inc %x
+  }
+}
+alias VisitorsHistory {
+  if ($dialog(VisitorsHistory)) { dialog -x VisitorsHistory | dialog -mh VisitorsHistory VisitorsHistory }
+  else { dialog -mh VisitorsHistory VisitorsHistory }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog roomlistdiag {
+  title "Room list"
+  size -1 -1 165 166
+  option dbu
+  list 1, 0 10 167 135, size hsbar vsbar
+  button "Report", 3, 35 150 37 12, ok
+  button "Cancel", 4, 89 150 37 12, cancel
+}
+on *:DIALOG:roomlistdiag:init:*: { 
+  did -a $dname 3 $langs(70)
+  did -a $dname 4 $langs(112)
+}
+on *:DIALOG:roomlistdiag:dclick:1: { 
+  if ($dialog(ReportDialog)) { 
+    did -nr ReportDialog 7
+    did -f ReportDialog 5,13
+    did -a ReportDialog 7 $did(1).seltext
+    dialog -x roomlistdiag
+  }
+}
+on *:DIALOG:roomlistdiag:sclick:3: { 
+  if ($dialog(ReportDialog)) { 
+    did -nr ReportDialog 7
+    did -f ReportDialog 5,13
+    did -a ReportDialog 7 $did(1).seltext
+  }
+}
+raw 321:*:{
+  !haltdef
+}
+raw 323:*:{
+  !haltdef
+}
+raw 322:*:{
+  if ($dialog(roomlistdiag)) { 
+    did -a roomlistdiag 1 $2
+  }
+}
+alias roomlistdiag {
+  if ($dialog(roomlistdiag)) { dialog -x roomlistdiag | dialog -mh roomlistdiag roomlistdiag }
+  else { dialog -mh roomlistdiag roomlistdiag | .!list }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog kalamngyregister {
+  title "Nickname Register"
+  size -1 -1 160 95
+  option dbu
+  text "Nickname:", 1, 12 12 30 7
+  text "Password:", 2, 12 24 30 7
+  text "Email:", 3, 12 34 30 7
+  edit "", 9, 45 11 103 11
+  edit "", 10, 45 22 103 11
+  edit "", 11, 45 33 103 11
+  text "ﬁ„ »«” Œœ«„ «·«”„ ·„œ… Œ„” œﬁ«∆ﬁ ⁄·Ì «·«ﬁ·*", 4, 12 47 150 10, center
+  text "ﬁ„ »«œŒ«· ﬂ·„… ”—  ﬂÊ‰ ⁄·Ì «·«ﬁ· ”  Œ«‰« **", 5, 12 57 150 10, center
+  text "«œŒ· «Ì„Ì· ·«” —Ã«⁄ ﬂ·„… «·”— Õ«· ‰”Ì«‰Â«***", 6, 12 67 150 10, center
+  button "OK", 14, 36 80 40 12, ok
+  button "Cancel", 15, 84 80 40 12, cancel
+}
+on *:DIALOG:kalamngyregister:init:*: { 
+  did -a $dname 9 $iif(%defaultnick. [ $+ [ %registersel ] ],%defaultnick. [ $+ [ %registersel ] ],$me)
+  did -m $dname 9
+  did -f $dname 10
+}
+on *:DIALOG:kalamngyregister:sclick:14: {
+  if (($len($did(10)) >= 6) && ($did(11))) { 
+    register $did(10) $did(11)
+    set %password $did(10)
+  }
+  else $?!="·ﬁœ «œŒ·  ﬁÌ„ Œ«ÿ∆… $crlf $+ «⁄œ «œŒ«· ﬂ·„… «·”— Ê«·«Ì„Ì· ﬂ„« „Ê÷Õ"
+}
+alias kalamngyregister {
+  set %registersel $1
+  if ($dialog(kalamngyregister)) { dialog -o kalamngyregister }
+  else { dialog -mh kalamngyregister kalamngyregister }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog kalamngypasschange {
+  title "Password Change"
+  size -1 -1 160 62
+  option dbu
+  text "Nickname:", 1, 12 12 30 7
+  text "New Pass:", 2, 12 24 30 7
+  edit "", 9, 45 11 103 11
+  edit "", 10, 45 22 103 11
+  text "«œŒ· ﬂ·„… «·”— «·ÃœÌœ…*", 4, 12 37 150 10, center
+  button "OK", 14, 36 47 40 12, ok
+  button "Cancel", 15, 84 47 40 12, cancel
+}
+on *:DIALOG:kalamngypasschange:init:*: { 
+  did -a $dname 9 $iif(%defaultnick. [ $+ [ %passchangesel ] ],%defaultnick. [ $+ [ %passchangesel ] ],$me)
+  did -m $dname 9
+  did -f $dname 10
+}
+on *:DIALOG:kalamngypasschange:sclick:14: {
+  if ($len($did(10)) >= 6) { 
+    ns set password $did(10)
+    set %password $did(10)
+  }
+  else $?!="·œ «œŒ·  ﬁÌ„ Œ«ÿ∆… $crlf $+ «⁄œ «œŒ«· ﬂ·„… «·”—"
+}
+alias kalamngypasschange {
+  set %passchangesel $1
+  if ($dialog(kalamngypasschange)) { dialog -o kalamngypasschange }
+  else { dialog -mh kalamngypasschange kalamngypasschange }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog kalamngypassrestore {
+  title "Password Restore"
+  size -1 -1 160 62
+  option dbu
+  text "Nickname:", 1, 12 12 30 7
+  text "Email:", 2, 12 24 30 7
+  edit "", 9, 45 11 103 11
+  edit "", 11, 45 22 103 11
+  text "«œŒ· «·«Ì„Ì· «·„” Œœ„ Êﬁ  «· ”ÃÌ·*", 4, 12 37 150 10, center
+  button "OK", 14, 36 47 40 12, ok
+  button "Cancel", 15, 84 47 40 12, cancel
+}
+on *:DIALOG:kalamngypassrestore:init:*: { 
+  did -a $dname 9 $iif(%defaultnick. [ $+ [ %passrestoresel ] ],%defaultnick. [ $+ [ %passrestoresel ] ],$me)
+  did -m $dname 9
+  did -f $dname 11
+}
+on *:DIALOG:kalamngypassrestore:sclick:14: {
+  if ($did(11)) { 
+    ns SENDPASS $did(11) $did(9)
+  }
+  else $?!="·ﬁœ «œŒ·  ﬁÌ„ Œ«ÿ∆… $crlf $+ «⁄œ «œŒ«· «·«Ì„Ì·"
+}
+alias kalamngypassrestore {
+  set %passrestoresel $1
+  if ($dialog(kalamngypassrestore)) { dialog -o kalamngypassrestore }
+  else { dialog -mh kalamngypassrestore kalamngypassrestore }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog kalamngycodeconfirm {
+  title "Code Confirmation"
+  size -1 -1 160 62
+  option dbu
+  text "Nickname:", 1, 12 12 30 7
+  text "Code:", 2, 12 24 30 7
+  edit "", 9, 45 11 103 11
+  edit "", 11, 45 22 103 11
+  text "«œŒ· «·ﬂÊœ «·„—”· «·Ì «·«Ì„Ì· *", 4, 12 37 150 10, center
+  button "OK", 14, 36 47 40 12, ok
+  button "Cancel", 15, 84 47 40 12, cancel
+}
+on *:DIALOG:kalamngycodeconfirm:init:*: { 
+  did -a $dname 9 $iif(%defaultnick. [ $+ [ %codeconfirmsel ] ],%defaultnick. [ $+ [ %codeconfirmsel ] ],$me)
+  did -m $dname 9
+  did -f $dname 11
+}
+on *:DIALOG:kalamngycodeconfirm:sclick:14: {
+  if ($did(11)) { 
+    ns CONFIRM $did(11)
+  }
+  else $?!="·ﬁœ «œŒ·  ﬁÌ„ Œ«ÿ∆… $crlf $+ «⁄œ «œŒ«· «·ﬂÊœ"
+}
+alias kalamngycodeconfirm {
+  set %codeconfirmsel $1
+  if ($dialog(kalamngycodeconfirm)) { dialog -o kalamngycodeconfirm }
+  else { dialog -mh kalamngycodeconfirm kalamngycodeconfirm }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog kalamngytrans {
+  title "Translation"
+  size -1 -1 160 62
+  option dbu
+  check "In Translation", 1, 12 12 50 7
+  check "Out Translation", 2, 12 24 50 7
+  button "OK", 14, 36 47 40 12, ok
+  button "Cancel", 15, 84 47 40 12, cancel
+}
+on *:DIALOG:kalamngytrans:init:*: { 
+  if (%translationin == on) { did -c $dname 1 }
+  if (%translationout == on) { did -c $dname 2 }
+
+}
+on *:DIALOG:kalamngytrans:sclick:14: {
+  if (!$xdid(tbar2, 7).visible) && (($did(1).state) || ($did(2).state)) { xdid -s tbar2 7 }
+  if ($xdid(tbar2, 7).visible) && ((!$did(1).state) && (!$did(2).state)) { xdid -h tbar2 7 }
+  if ($did(1).state) { set %translationin on | notifyinfo *** In Translation Arabic To English Activated : on }
+  if (!$did(1).state) { set %translationin off | notifyinfo *** In Translation Arabic To English DeActivated : off }
+  if ($did(2).state) { set %translationout on | notifyinfo *** Out Translation English To Arabic Activated : on } 
+  if (!$did(2).state) { set %translationout off | notifyinfo *** Out Translation English To Arabic DeActivated : off }
+}
+alias trans {
+  if ($dialog(kalamngytrans)) { dialog -o kalamngytrans }
+  else { dialog -mh kalamngytrans kalamngytrans }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog WlcEditor {
+  title "Fast welcome msgs Editor"
+  size -1 -1 296 160
+  option dbu
+  edit "", 1, 35 15 256 10, autohs
+  edit "", 2, 35 25 256 10, autohs
+  edit "", 3, 35 35 256 10, autohs
+  edit "", 4, 35 45 256 10, autohs
+  edit "", 5, 35 55 256 10, autohs
+  edit "", 6, 35 65 256 10, autohs
+  edit "", 7, 35 75 256 10, autohs
+  edit "", 8, 35 85 256 10, autohs
+  edit "", 9, 35 95 256 10, autohs
+  edit "", 10, 35 105 256 10, autohs
+  edit "", 11, 35 115 256 10, autohs
+  edit "", 12, 35 125 256 10, autohs
+  text "Fast Messages Editor", 13, 2 4 297 9, center
+  text "Shift+F1", 14, 5 16 25 8
+  text "Shift+F2", 15, 5 26 25 8
+  text "Shift+F3", 16, 5 36 25 8
+  text "Shift+F4", 17, 5 46 25 8
+  text "Shift+F5", 18, 5 56 25 8
+  text "Shift+F6", 19, 5 66 25 8
+  text "Shift+F7", 20, 5 76 25 8
+  text "Shift+F8", 21, 5 86 25 8
+  text "Shift+F9", 22, 5 96 25 8
+  text "Shift+F10", 23, 5 106 25 8
+  text "Shift+F11", 24, 5 116 25 8
+  text "Shift+F12", 25, 5 126 25 8
+  button "Save", 26, 101 140 37 12, ok
+  button "Cancel", 27, 151 140 37 12, cancel
+  icon 28, 250 141 15 15,  imgmirc\imgs\colorize.bmp, 0
+  button "Click to Open Text File", 29, 14 150 61 7, flat
+}
+on *:DIALOG:WlcEditor:init:*: { 
+  did -a $dname 13 $langs(114)
+  did -a $dname 26 $langs(111)
+  did -a $dname 27 $langs(112)
+  did -a $dname 29 $langs(194)
+  var %x 1,%y 12
+  while (%x <= %y) {
+    did -a $dname %x $read($files(welcomes), %x)
+    inc %x
+  }
+}
+on *:DIALOG:WlcEditor:sclick:29: {
+  run $files(welcomes)
+}
+on *:DIALOG:WlcEditor:sclick:28: {
+  EmotionDialog options
+}
+on *:DIALOG:WlcEditor:sclick:26: {
+  write -c $files(welcomes)
+  var %x 1,%y 12
+  while (%x <= %y) {
+    if ($did(%x)) write $files(welcomes) $did(%x)
+    else write $files(welcomes) 1  —ÕÌ» ”—Ì⁄ Ì„ﬂ‰ﬂ  ⁄œÌ·Â ﬂÌ›„« ‘∆ 
+    inc %x
+  }
+}
+alias WlcEditor {
+  if ($dialog(WlcEditor)) { dialog -o WlcEditor }
+  else { dialog -m WlcEditor WlcEditor }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog autojoinEditor {
+  title "Auto Join Rooms"
+  size -1 -1 106 204
+  option dbu
+  list 1, 5 35 93 136, size
+  edit "", 2, 15 18 74 9, disable autohs
+  button "Up", 3, 9 172 25 12
+  button "Down", 4, 38 172 25 12
+  button "Delete", 5, 67 172 25 12
+  button "Save", 6, 14 187 37 12, ok
+  button "Cancel", 7, 53 187 37 12, cancel
+  text "Edit Auto Join rooms", 8, 0 4 105 9, center
+}
+on *:DIALOG:autojoinEditor:init:*: { 
+  did -a $dname 8 $langs(182)
+  did -a $dname 3 $langs(183)
+  did -a $dname 4 $langs(184)
+  did -a $dname 5 $langs(185)
+  did -a $dname 6 $langs(111)
+  did -a $dname 7 $langs(112)
+  did -a $dname 2 $iif(%defaultnick. [ $+ [ %autojoinEditorsel ] ],%defaultnick. [ $+ [ %autojoinEditorsel ] ],Nickname %autojoinEditorsel)
+  var %x 1,%y $lines($files(autojoin $+ %autojoinEditorsel))
+  while (%x <= %y) {
+    var %txt $read($files(autojoin $+ %autojoinEditorsel), %x)
+    if (%txt) did -a $dname 1 %txt
+    inc %x
+  }
+}
+on *:DIALOG:autojoinEditor:sclick:5: {
+  if ($did(1).sel) did -d $dname 1 $did(1).sel
+}
+on *:DIALOG:autojoinEditor:sclick:3: {
+  if ($did(1).sel) && ($did(1).sel != 1) {
+    var %selectedid $did(1).sel
+    var %selectedtxt $did(1,%selectedid)
+    var %replacedid $calc(%selectedid - 1)
+    var %replacedtxt $did(1,%replacedid)
+    did -o $dname 1 %selectedid %replacedtxt
+    did -o $dname 1 %replacedid %selectedtxt
+    did -c $dname 1 %replacedid
+  }
+}
+on *:DIALOG:autojoinEditor:sclick:4: {
+  if ($did(1).sel) && ($did(1).sel != $did(1).lines) {
+    var %selectedid $did(1).sel
+    var %selectedtxt $did(1,%selectedid)
+    var %replacedid $calc(%selectedid + 1)
+    var %replacedtxt $did(1,%replacedid)
+    did -o $dname 1 %selectedid %replacedtxt
+    did -o $dname 1 %replacedid %selectedtxt
+    did -c $dname 1 %replacedid
+  }
+}
+on *:DIALOG:autojoinEditor:sclick:6: {
+  write -c $files(autojoin $+ %autojoinEditorsel)
+  if ($did(1).lines) {
+    var %x 1,%y $did(1).lines
+    while (%x <= %y) {
+      write $files(autojoin $+ %autojoinEditorsel) $did(1,%x)
+      inc %x
+    }
+  }
+}
+alias autojoinEditor {
+  set %autojoinEditorsel $1
+  if ($dialog(autojoinEditor)) { dialog -o autojoinEditor }
+  else { dialog -m autojoinEditor autojoinEditor }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog notifywordsEditor {
+  title "Edit Notication words"
+  size -1 -1 106 210
+  option dbu
+  list 1, 5 35 93 122, size
+  edit "", 2, 15 18 74 9, disable autohs
+  edit "", 3, 5 159 92 10
+  button "Add", 4, 27 172 25 10
+  button "Delete", 5, 53 172 25 10
+  button "Save", 6, 14 187 37 12, ok
+  button "Cancel", 7, 53 187 37 12, cancel
+  text "Edit Notication words", 8, 0 4 105 9, center
+  button "Click to Open Text File", 9, 0 202 105 7, flat
+}
+
+on *:DIALOG:notifywordsEditor:init:*: { 
+  did -a $dname 8 $langs(193)
+  did -a $dname 9 $langs(194)
+  did -a $dname 4 $langs(25)
+  did -a $dname 5 $langs(185)
+  did -a $dname 6 $langs(111)
+  did -a $dname 7 $langs(112)
+  did -f $dname 3
+  did -a $dname 2 $iif(%defaultnick. [ $+ [ %notifywordsEditorsel ] ],%defaultnick. [ $+ [ %notifywordsEditorsel ] ],Nickname %notifywordsEditorsel)
+  var %x 1,%y $lines($files(notifywords $+ %notifywordsEditorsel))
+  while (%x <= %y) {
+    var %txt $read($files(notifywords $+ %notifywordsEditorsel), %x)
+    if (%txt) did -a $dname 1 %txt
+    inc %x
+  }
+}
+on *:DIALOG:notifywordsEditor:sclick:9: {
+  run $files(notifywords $+ %notifywordsEditorsel)
+}
+on *:DIALOG:notifywordsEditor:sclick:5: {
+  if ($did(1).sel) did -d $dname 1 $did(1).sel
+}
+on *:DIALOG:notifywordsEditor:sclick:4: {
+  if ($did(3)) {
+    did -a $dname 1 $did(3)
+    did -rf $dname 3
+  }
+}
+on *:DIALOG:notifywordsEditor:sclick:6: {
+  write -c $files(notifywords $+ %notifywordsEditorsel)
+  if ($did(1).lines) {
+    var %x 1,%y $did(1).lines
+    while (%x <= %y) {
+      write $files(notifywords $+ %notifywordsEditorsel) $did(1,%x)
+      inc %x
+    }
+  }
+}
+alias notifywordsEditor {
+  set %notifywordsEditorsel $1
+  if ($dialog(notifywordsEditor)) { dialog -o notifywordsEditor }
+  else { dialog -m notifywordsEditor notifywordsEditor }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+on *:START:{ 
+  fullname 4 KalamngyChat ver 10
+  loadlangs
+  unset %imgmirc_ver
+  unset %cidno.*
+  unset %EmotionDialogmore
+  if $exists($dlls(imgmirc)) { if ( %imgmirc_config & 1 == 1 ) im_preload }
+  !.dll $dlls(kalamngy) sockbot0
+  remini mirc.ini nicklist
+  if (%defaultnick.1) goto nick
+  :nonick
+  if (!%defaultnick.1) {
+    showmirc -x
+    set %defaultnick.1 $?="Enter your Nickname - «œŒ· «”„ﬂ «·„” ⁄«—"
+  }
+  if (!%defaultnick.1) goto nonick
+  kalamngysetup 1
+  :nick
+  tbar1
+  tbar2
+  fastcmd
+  if (%nickenable.1 == on) {
+    scon 1 nick $iif($setting(defaultnick1),$setting(defaultnick1),Nickname1)
+  }
+  if (%nickenable.2 == on) {
+    if (!%defaultnick.2) set %defaultnick.2 $?="Enter your Nickname 2 - «œŒ· «”„ﬂ «·„” ⁄«— 2"
+
+    if (%nickenable.1 == on) {
+      server -n
+      fastcmd
+      scon 2 nick $iif($setting(defaultnick2),$setting(defaultnick2),Nickname2)
+    }
+    else scon 1 nick $iif($setting(defaultnick2),$setting(defaultnick2),Nickname2)
+  }
+  if ($file($files(userlist))) {
+    .hmake userlist
+    .hload -s userlist $files(userlist)
+  }
+  if ($file($files(badword))) {
+    .hmake badword
+    .hload -s badword $files(badword)
+  }
+  if ($file($files(repeat))) {
+    .hmake repeat
+    .hload -s repeat $files(repeat)
+  }
+  if ($file($files(whounban))) {
+    .hmake whounban
+    .hload -s whounban $files(whounban)
+  }
+  if ($file($files(joinautoup))) {
+    .hmake joinautoup
+    .hload -s joinautoup $files(joinautoup)
+  }
+  if ($file($files(update1))) {
+    .remove $files(update1)
+  }
+  if ($file($files(update2))) {
+    .remove $files(update2)
+  }
+  if ($file($files(update3))) {
+    .remove $files(update3)
+  }
+  echo -a 2*** 
+  echo -a 00,15*** Note: $langs(144)
+  autoawaytrigger
+  checkversion
+}
+on 1:EXIT:{
+  ul
+}
+
+
+on 1:DISCONNECT:{
+  unset %cidno. [ $+ [ $cid2con ] ]
+}
+alias connectcmd {
+  if ($1) {
+    if ($sock(sockbot. $+ $1).status != active) { 
+      if ($dialog(kalamngy)) { did -a kalamngy $iif($1 == 1,58,59) $langs(172) }
+      xdid -t tbar1 6 $utfencode(ï $langs(172))
+      nickconnect $1
+    }
+    else {
+      !sockwrite -n sockbot. $+ $1 Quit :Disconnect
+      sockclose *. $+ $1
+      unset %cidno. [ $+ [ $1 ] ]
+      if ($dialog(kalamngy)) { did -a kalamngy $iif($1 == 1,58,59) $langs(167) }
+      xdid -t tbar1 6 $utfencode(ï $langs(167))
+    }
+  }
+  else {
+    if ($me == $setting(defaultnick1)) nickconnect 1
+    elseif ($me == $setting(defaultnick2)) nickconnect 2
+    else kalamngysetup 1
+  }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias nickconnect {
+  var %other $iif($1 == 1,2,1)
+  var %activecon $iif($scon(1) == $cid,1,2)
+  if ($sock(sockbot. $+ $1).status == active) return
+  else {
+    if ($scid(0) == 1) {
+      if ($sock(sockbot. $+ %other).status != active) scon 1 serverconnect $1
+      else { server -n | scon 2 serverconnect $1 }
+    }
+    else {
+      if ($sock(sockbot. $+ %other).status != active) {
+        if ($scon(%activecon).me == $setting(defaultnick $+ $1)) scon %activecon serverconnect $1
+        elseif ($scon($iif(%activecon == 1,2,1)).me == $setting(defaultnick $+ $1)) scon $iif(%activecon == 1,2,1) serverconnect $1
+        else scon %activecon serverconnect $1
+      }
+      else {
+        if ($cid2con != %other) scon %activecon serverconnect $1
+        else scon $iif(%activecon == 1,2,1) serverconnect $1
+      }
+    }
+  }
+}
+alias serverconnect {
+  sockclose local. $+ $1
+  sockclose localhost. $+ $1
+  unset %cidno. [ $+ [ $1 ] ] 
+  if (!$sock(localhost. $+ $1)) {
+    var %a = $report
+    server 127.0.0.1 %a
+    socklisten local. $+ $1 %a
+  }
+}
+on *:socklisten:local.*: {
+  var %sockid $gettok($sockname,2,46)
+  set %cidno. [ $+ [ %sockid ] ] $cid
+  sockaccept localhost. $+ %sockid
+  sockbot %sockid
+}
+on *:sockread:localhost.*: {
+  var %sockid $gettok($sockname,2,46)
+  var %read
+  sockread %read
+  if ($regex($gettok(%read,1,32),/PING/)) { 
+  !sockwrite -tn $sockname PONG $gettok(%read,2-,32) }
+  elseif ($regex($gettok(%read,1,32),/QUIT/)) {
+    if ($sock(sockbot. $+ %sockid).status == active) {
+      !sockwrite -n sockbot. $+ %sockid $gettok(%read,1-,32)
+      sockclose sockbot. $+ %sockid
+      unset %cidno. [ $+ [ %sockid ] ]
+    }
+  }
+  elseif ($sock(sockbot. $+ %sockid).status == active) {
+    !sockwrite -n sockbot. $+ %sockid $lf $&
+      $gettok(%read,1-,32)
+  }
+}
+alias report {
+  var %a = $r(1111,5555)
+  while (!$portfree(%a)) { var %a = $r(1111,5555) }
+  return %a
+}
+alias sockbot {
+  var %sockid $1
+  if ($setting(defaultnick)) nick $setting(defaultnick)
+  unset %nsre. [ $+ [ %sockid ] ]
+  echo -s 00,15*** $langs(143)
+  sockclose sockbot. $+ %sockid
+  !.dll $dlls(kalamngy) sockbot1
+}
+on *:sockopen:sockbot.*:{
+  var %sockid $gettok($sockname,2,46)
+  if (!$sockerr) {
+    !.dll $dlls(kalamngy) sockbot2
+  }
+  else {
+    echo -s 00,15*** $langs(151)
+    .timer 1 10 scon %sockid serverconnect %sockid
+  }
+}
+on *:sockread:sockbot.*:{
+  var %sockid $gettok($sockname,2,46)
+  if ($sockerr > 0) {   
+    serverconnect %sockid
+  }
+  if (!$sockerr) {
+    var %buffer | sockread %buffer
+    if ($regex($gettok(%buffer,2,32),001)) {
+      if ($dialog(kalamngy)) { did -a kalamngy $iif(%sockid == 1,58,59) $langs(171) }
+      xdid -t tbar1 6 $utfencode(ï $langs(171))
+      .timer 0 10 .sockwrite -tn sockbot. $+ %sockid noop
+      !.dll $dlls(kalamngy) sockbot4
+      if ($me != $setting(defaultnick)) {
+        if ($setting(password)) ns ghost $setting(defaultnick) $setting(password)
+        else kalamngysetup %sockid
+      }
+    }
+    if ($regex($gettok(%buffer,2,32),432)) {
+      if (Being held for registered user isin $gettok(%buffer,5-,32)) {
+        nick $gettok(%buffer,4,32) $+ `
+        if ($setting(password)) ns ghost $setting(defaultnick) $setting(password)
+        else .timer 1 0 passwordrequired $gettok(%buffer,4,32) $cid2con
+      }
+      else {
+        if ($gettok(%buffer,4,32) != $setting(defaultnick)) nick $setting(defaultnick)
+        else nick Random_ $+ $rand(111111,999999)
+      }
+    }
+    if ($regex($gettok(%buffer,2,32),433)) {
+      nick $gettok(%buffer,4,32) $+ `
+      if ($setting(password)) ns ghost $setting(defaultnick) $setting(password)
+    }
+    elseif ($regex(%buffer,/^:\S+ (422|372|375|376|421|461|462|705|706|910)/)) return
+    if ($sock(localhost. $+ %sockid).status == active) {
+      !sockwrite -tn localhost. $+ %sockid $gettok(%buffer,1-,32)
+    }
+  }
+}
+on *:sockclose:sockbot.*:{
+  var %sockid $gettok($sockname,2,46)
+  unset %cidno. [ $+ [ %sockid ] ]
+  echo -s 00,15*** Trying to connect after 10 seconds.
+  .timer 1 10 scon %sockid serverconnect %sockid
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias colfix {
+  var %co $replace($1,16,12,17,12,18,03,19,03,20,08,21,08,22,11,23,07)
+  if ($regex(%co,/(\d+\,\d+\,\d+)/)) {
+    var %x $remove(%co,$chr(44) $+ $gettok($regml(1) ,3,44))
+    return $remove(%x ,$chr(18))
+  }
+  else {
+    return $remove(%co,$chr(18))
+  }
+}
+alias fixedmsg {
+  privmsg $1 $setting(finalcolor) $2-
+  if ($1 ischan) echo -i20 $1 $ts($1) $+ $cmME($me,$1,1) $+ $setting(finalcolour) $+ $2-
+  else echo -i20 $1 $ts($1) $jb($me,3) $cnME($me,1) $+ $setting(finalcolour) $+ $2-
+
+}
+alias msg {
+  privmsg $1 $2-
+  if ($1 ischan) echo -i20 $1 $ts($1) $+ $cmME($me,$1,1) $+ $2 $+ $3-
+  else echo -i20 $1 $ts($1) $jb($me,3) $cnME($me,1) $+ $2 $+ $3-
+  !haltdef
+}
+alias notice {
+  !.notice $1-
+  echo -mi20 $active $ts($active) $+ :6: 06You Sent a Notice On Screen to $1 : $2-
+}
+alias ame {
+  !.dll $dlls(kalamngy) sayame $strip($1-) 
+  var %x 1,%y $comchan($me,0)
+  while (%x <= %y) {
+    echo -i20 $comchan($me, %x) $ts($comchan($me, %x)) $+ :6: 6 $+ $me action $strip($1-) 
+    inc %x
+  }
+  !haltdef
+}
+alias amsg {
+  !.dll $dlls(kalamngy) sayamsg $setting(finalcolor) $1-
+  var %x 1,%y $comchan($me,0)
+  while (%x <= %y) {
+    echo -i20 $comchan($me, %x) $ts($comchan($me, %x)) $+ $cmME($me,$comchan($me, %x),1) $+ $setting(finalcolour) $+ $1-
+    inc %x
+  }
+  !haltdef
+}
+alias saymsg {
+  !.dll $dlls(kalamngy) saymsg $setting(finalcolor) $1-
+  echo -mi20 $active $ts($active) $+ $cmME($me,$active,1) $+ $setting(finalcolour) $+ $1-
+  !haltdef
+}
+alias ignorea {
+  !.ignore $1-
+  echo -mi20 $active $tslong($active) ;:9 ;:5 06 $+ $2 Added to ignore list for 12 hours 
+}
+alias ignorer {
+  !.ignore $1-
+  echo -mi20 $active $tslong($active) ;:9 06 $+ $2 Removed from ignore list
+}
+alias autoaway1 {
+  if (%autoawaymin.1 !isnum 1-999) set %autoawaymin.1 60
+  if (%autoawayon.1 == on) && ($calc($idle / 60) >= %autoawaymin.1) && ($sock(sockbot.1).status == active) { 
+    scid %cidno.1 !.away %autoaway.1
+    .timerautoaway1 off
+  }
+}
+alias autoaway2 {
+  if (%autoawaymin.2 !isnum 1-999) set %autoawaymin.2 60
+  if (%autoawayon.2 == on) && ($calc($idle / 60) >= %autoawaymin.2) && ($sock(sockbot.2).status == active) {
+    scid %cidno.2 !.away %autoaway.2
+    .timerautoaway2 off
+  }
+}
+alias autoawaytrigger {
+  if (%autoawayon.1 == on) && ($sock(sockbot.1).status == active) .timerautoaway1 0 300 autoaway1
+  if (%autoawayon.2 == on) && ($sock(sockbot.2).status == active) .timerautoaway2 0 300 autoaway2
+}
+alias away {
+  if ($away) { 
+    !.away 
+    autoawaytrigger
+  }
+  else {
+    set -u10 %awaymsg $$?="Write Your Away msg - «ﬂ » —”«·… ⁄œ„ «· Ê«Ãœ «„«„ «·œ—œ‘…" | !.away %awaymsg
+  }
+}
+on ^*:TEXT:*:#: { 
+  if (# == #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($me isop #) {
+    if ($timer(helpsys $+ $nick)) {
+      .timerhelpsys $+ $nick off
+    }
+    if ($3 == RoomReportCommand:) {
+      if ($4 !isin %channels) {
+        echo -i40 # $tslong($chan) 6ïïïï | echo -i40 # $tslong($chan) 6ïïïï $1 Bad Room Report: 4 $4 06 Reason: 4 $5- | echo -i40 # $tslong($chan) 6ïïïï 
+        if ($active != #) { 
+          notifyinfo  $1 Bad Room Report: $4 Reason: $5- 
+        }
+      }
+      !halt
+    }
+  }
+  if ($nick == IRC) echo -mi30 # $ts($chan) $+ $cm($nick,$chan,1) $cn($remove($1,:),1) $colfix($2) $+ $3- 
+  else echo -mi30 # $ts($chan) $+ $cm($nick,$chan,1) $colfix($1) $+ $2-
+  if (%translationin == on) { translate ar # $colfix($1) $nick : $2- }
+  !haltdef
+}
+on ^*:TEXT:*:?: {
+  if ($window($nick)) {
+    echo -mi20 $nick $ts($nick) $jb($nick,3) $cn($nick,1) $colfix($1) $+ $2-
+    if (%translationin == on) { translate ar $nick $colfix($1) $nick : $2- }
+    if ($active != $nick) && ($setting(msounds) == on) splay private.mp3
+  }
+  else { echo -mi20 $comchan($nick,1) $ts($comchan($nick,1)) $cn($nick,1) $colfix($1) $+ $2-
+  }
+  !haltdef
+}
+on 1:OPEN:?:*:{ whois $nick | if ($setting(privatewelcomeon) == on) fixedmsg $nick $setting(privatewelcome) }
+on ^*:action:*:#: { 
+  echo -mi20 # $ts($chan) $+ :6: 6 $+ $nick action $strip($1-)
+  if (%translationin == on) { translate ar # action $nick : $2- }
+  !haltdef 
+}
+on ^*:KICK:*: {
+  hadd -mu3600 VisitorsHistory. $+ # $knick $ctime
+  if (# == $active) {
+    .timer 1 .1 counter 
+  }
+  if ($window($knick) == $knick) echo -i20 $knick $ts($chan) $+ 4 Host $nick kicked $knick out of the chat room # : $1-
+  if ($me == $knick) { 
+    if ($setting(msounds) == on) splay kick.mp3
+    notifyinfo Host $nick kicked $knick out of the chat room #
+    echo -i20 # $ts($chan) $+ 4 Host $nick kicked $knick out of the chat room # 04: $1-
+  }
+  else {
+    echo -i20 # $ts($chan) $+ 4 Host $nick kicked $knick out of the chat room: $1-
+  }
+  if (%translationin == on) { translate ar # kick $nick : Host $nick kicked $knick out of the chat room: $1- }
+  !haltdef
+}
+on ^*:NOTICE:*:#: {
+  echo -mi20 # $ts($chan) $+ $cm($nick,$chan,2) 6Sent a Notice On Screen to me : $1- 
+  if (%translationin == on) { translate ar # notice $nick : Sent a Notice On Screen to me : $1-  }
+  if ($setting(msounds) == on) splay private.mp3  
+  !haltdef
+}
+on ^*:NOTICE:*:?: {
+  if ($nick == NickServ) {
+    if ((isn't registered. isin $1-) || (You are already identified isin $1-)) { !halt }
+    if (Password incorrect isin $1-) && (!%nsre. [ $+ [ $cid2con ] ]) { set %nsre. [ $+ [ $cid2con ] ] on | !halt }
+    if (Password incorrect. isin $1-) && (%nsre. [ $+ [ $cid2con ] ]) { .timer 1 0 passwordrequired $me $cid2con }
+    if (This nickname is registered and protected. If it is your isin $1-) && ($setting(password)) { login $setting(password) }
+    if (This nickname is registered and protected. If it is your isin $1-) && (!$setting(password)) { .timer 1 0 passwordrequired $me $cid2con }
+    if (has been released. isin $1-) { nick $setting(defaultnick) }
+    if (Your email address is not confirmed. isin $1-) { kalamngycodeconfirm $cid2con }
+    goto noser
+  }
+  if ($setting(msounds) == on) splay private.mp3
+  :noser
+  echo -mi20 $active $ts($active) $+ :6: 6 $+ $nick Sent a Notice On Screen to me : $1-
+  if (%translationin == on) { translate ar $active notice $nick : Sent a Notice On Screen to me : $1-  }
+  Notifyinfo  $nick Sent a Notice On Screen to me : $1-
+  !haltdef
+}
+on 1:input:#: {
+  if ($away) { away }
+  if (/nick == $1) {
+    set %defaultnick. [ $+ [ $cid2con ] ] $2-
+    nick $setting(defaultnick)
+  }
+  if ((/* !iswm $1) || (/me == $1) || (/action == $1)) {
+    if ((/me != $1) && (/action != $1)) {
+      if (# == #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($me isop #) {
+        echo -i20 # $ts($chan) $+ $cmME($me,$chan,1) 02 $+ $snick(#,1) , $setting(finalcolour) $+ $1- 
+        privmsg # 02 $snick(#,1) , $setting(finalcolor) $+ $1-
+      }
+      else {
+        echo -i20 # $ts($chan) $+ $cmME($me,$chan,1) $+ $setting(finalcolour) $+ $1- 
+        privmsg # $setting(finalcolor) $1-
+        if (%translationout == on) { translate3 en # $setting(finalcolor) $me $1- }
+      }     
+      !haltdef
+    }
+    else {
+      echo -i20 # $ts($chan) $+ :6: 6 $+ $me action $strip($2-) | .describe # $strip($2-) | !haltdef
+    }
+  }
+}
+on *:input:?: {  
+  if ($away) { away }
+  if (/nick == $1) {
+    set %defaultnick. [ $+ [ $cid2con ] ] $2-
+    nick $setting(defaultnick)
+  }
+  if (/* !iswm $1) {
+    echo -i20 $target $ts($target) $jb($me,3) $cnME($me,1) $+ $setting(finalcolour) $+ $1- | privmsg $target $setting(finalcolor) $1- 
+    if (%translationout == on) { translate3 en $target $setting(finalcolor) $me $1- }
+    !haltdef
+  }
+}
+raw knock:*: { 
+  !haltdef
+}
+on ^*:INVITE:#: {
+  echo -i40 $active $tslong($active) 6ïïïï | echo -i40 $active $tslong($active) 6ïïïï $nick ( $+ $address $+ ) invites you to join  # | echo -i40 $active $tslong($active) 6ïïïï
+  !haltdef
+}
+on ^*:join:#: {
+  if (# == $active) {
+    counter
+  }
+  if ($nick = $me) { who # | echo -i40 # $ts($chan) $+ 0,0... | .echo -i40 # $ts($chan) 2Connected.. In $chan  | .echo -i40 # $ts($chan) 0,0.... | if ($setting(statusmsgon) == on) fixedmsg # $setting(statusmsg) | !haltdef }
+  if ($window($nick)) { echo -i40 $nick $tslong($nick) $cs($nick,1) $jb($nick,1) $cn($nick,3) 14Joined # $+ .  $iif($setting(showip) == on,( $address($nick ,2) )) }
+
+  echo -i40 # $tslong($chan) $cs($nick,1) $jb($nick,1) $cn($nick,3) 14Joined. $iif($setting(showip) == on,( $address($nick ,2) ))
+  if (.Staff isin $address($nick ,2)) {
+    echo -i40 # $tslong($chan) $cs($nick,3) $jb($nick,1) $cn($nick,3) 14is 09Administrative Staff.
+  }
+  if ($nick != $me) { 
+    if (# == #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($me isop #) && ($active != #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) { 
+      notifyinfo  $nick Joined  #
+    }
+    if ((r !isin $chan(#).mode) && ($me isop #)) { 
+      $userlist(action,#,$nick)
+      $joinautoup(action,#,$nick)
+    }
+    !haltdef 
+  }
+  !haltdef 
+}
+on ^*:part:#: { 
+  hadd -mu3600 VisitorsHistory. $+ # $nick $ctime
+  if (# == $active) {
+    .timer 1 .1 counter 
+  }
+  if ($nick != $me) { echo -i40 # $tslong($chan) $cs($nick,2) $jb($nick,2) $cn($nick,3) 14Left.  $1- $iif($setting(showip) == on,( $address($nick ,2) )) }
+  if ($window($nick)) { echo -i40 $nick $tslong($nick) $cs($nick,2) $jb($nick,2) $cn($nick,3) 14Left # $+ .  $1- $iif($setting(showip) == on,( $address($nick ,2) )) }
+  !haltdef
+}
+on ^*:quit: {
+  var %x 1,%y $comchan($nick,0)
+  while (%x <= %y) {
+    hadd -mu3600 VisitorsHistory. $+ $comchan($nick, %x) $nick $ctime
+    if ($comchan($nick, %x) == $active) {
+      .timer 1 .1 counter 
+    }
+    echo -i27 $comchan($nick, %x) $tslong($comchan($nick, %x)) $cs($nick,2) $jb($nick,2) $cn($nick,3) 14Quit. $iif($setting(showip) == on,( $address($nick ,2) ))
+    inc %x
+  }
+  if ($window($nick)) { echo -i27 $nick $tslong($nick) $cs($nick,2) $jb($nick,2) $cn($nick,3) 14Quit. $iif($setting(showip) == on,( $address($nick ,2) )) }
+  !haltdef
+}
+on ^*:NICK: {
+  var %x 1,%y $comchan($newnick,0)
+  while (%x <= %y) {
+    echo -i27 $comchan($newnick, %x) $tslong($comchan($newnick, %x)) ;:9 14 $+ $nick is now $jb($newnick,1) $cn($newnick,3)
+    inc %x
+  }
+  if ($window($newnick)) { echo -i27 $newnick $tslong($newnick) ;:9 14 $+ $nick is now $jb($newnick,1) $cn($newnick,3) }
+  if ($nick = $me) { !.dll $dlls(kalamngy) sockbot8 }
+  !haltdef
+}
+alias modeme { if ($me == $5) {
+    if ($active != $1) { 
+      notifyinfo You are now $3-4 at $1 by $2
+      if ($setting(msounds) == on) { splay mode.mp3 } 
+    }
+    if (# == #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) { 
+      names #
+    }
+  }
+}
+on ^*:RAWMODE:#:{
+  if (+qo isin $1) { 
+    if ($nick == ChanServ) { .echo -i40 # $tslong($chan) $cs($2,4) :. $cn($2,3) 14is 09Room Manager :1: . }
+    else { .echo -i40 # $tslong($chan) $cs($nick,4) 14 $+ $nick made $2- Manager :1: . }
+    modeme # $nick :1: Manager $2- 
+  }
+  elseif (+q isin $1) { .echo -i40 # $tslong($chan) $cs($nick,4) 14 $+ $nick made $2- Manager :1: . | modeme # $nick :1: Manager $2- }
+  elseif (+ao isin $1) { 
+    if ($nick == ChanServ) { .echo -i40 # $tslong($chan) $cs($2,4) :. $cn($2,3) 14is 09Room Admin :2: . }
+    else { .echo -i40 # $tslong($chan) $cs($nick,4) 14 $+ $nick made $2- Admin :2: . }
+    modeme # $nick :2: Admin $2- 
+  }
+  elseif (+a isin $1) { .echo -i40 # $tslong($chan) $cs($nick,4) 14 $+ $nick made $2- admin:2: . | modeme # $nick :2: admin $2- }
+  elseif (+o isin $1) { .echo -i40 # $tslong($chan) $cs($nick,4) 14 $+ $nick made $2- Owner:3: . | modeme # $nick :3: Owner $2- }
+  elseif (+h isin $1) { .echo -i40 # $tslong($chan) $cs($nick,4) 14 $+ $nick made $2- Host:4: . | modeme # $nick :4: Host $2- }
+  elseif (+v isin $1) { .echo -i40 # $tslong($chan) $cs($nick,4) 14 $+ $nick made $2- Star:5: . | modeme # $nick :5: Star $2- }
+  elseif (+b isin $1) { .echo -i40 # $tslong($chan) ;:9 14 $+ $nick 4[4ban+4]14: $2- }
+  elseif ((-q isin $1) || (-a isin $1) || (-o isin $1) || (-h isin $1) || (-v isin $1)) { .echo -i40 # $tslong($chan) $cs($nick,4) 14 $+ $nick made $2- Participant 3[9 $+ $replace($1,v,:5: ,h,:4: ,o,:3: ,a,:2: ,q,:1: ) 3]14. }
+  elseif (-b isin $1) { .echo -i40 # $tslong($chan) ;:9 14 $+ $nick 3[3ban-3]14: $2-  }
+  !haltdef
+}
+on ^*:TOPIC:#:{ echo -i20 # $ts($chan) 2 $+ $nick Change Topic : $1-  | !haltdef }
+raw 332:*:{ echo -i20 $2 $ts($2) 2 Topic Is: $3- | !haltdef }
+raw 333:*:{ echo -i20 $2 $ts($2) 2 Topic By: $3 | !haltdef }
+raw 473:*: { 
+  if ($window($2)) {
+    echo -i40 $2 $tslong($2) ;:9 06Unable to join $2 (Room is Invite Only) 
+  }
+  else {
+    echo -i40 $active $tslong($active) ;:9 06Unable to join $2 (Room is Invite Only) 
+  }
+  !haltdef 
+}
+raw 474:*: { 
+  if ($window($2)) {
+    echo -i40 $2 $tslong($2) ;:9 06Unable to join $2 (you are banned) 
+    echo -i40 $2 $tslong($2) ;:9 06Auto ReJoin after 1 Minute...
+    .timer 1 60 rejoin $2 
+  }
+  else {
+    echo -i40 $active $tslong($active) ;:9 06Unable to join $2 (you are banned) 
+  }
+  !haltdef 
+}
+raw 475:*: { 
+  if ($active != Channels List) {
+    echo -i40 $active $tslong($active) ;:9 06Unable to join $2 (Room Need Password) 
+  }
+  .timer 1 0 pjoin $2
+  !haltdef 
+}
+raw 482:*: {
+  echo -i40 $2 $tslong($2) ;:9 06you're not channel operator
+  !haltdef 
+}
+raw 306:*: {
+  echo -i40 $active $tslong($2) ;:9 06You have been marked as being away. " %awaymsg "
+  !haltdef 
+}
+raw 305:*: {
+  echo -i40 $active $tslong($2) ;:9 06You are back from you away status.
+  !haltdef 
+}
+
+raw 302:*: {
+  !haltdef 
+}
+
+raw 401:*:{ 
+  if ($hget(whoischecker,$2)) hdel whoischecker $2 
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06 $+ $2-
+  !haltdef 
+}
+raw 1:*:{ 
+  echo -s 15-
+  echo -s 15Welcome to Kalamngychat.com, Your IP:1 $gettok($8,2,64)
+  echo -s 15-
+  !haltdef
+}
+;room list start and end,cant use cmd,start
+raw 321:*:{ !haltdef }
+raw 323:*:{ !haltdef }
+raw 972:*:{ !haltdef }
+raw 2:*:{ !haltdef }
+raw 3:*:{ !haltdef }
+raw 4:*:{ !haltdef }
+raw 5:*:{ !haltdef }
+raw 251:*:{ !haltdef }
+raw 252:*:{ !haltdef }
+raw 253:*:{ !haltdef }
+raw 255:*:{ !haltdef }
+raw 265:*:{ !haltdef }
+
+on ^*:mode:#: { echo -i40 # $tslong($chan) ;:9 14 $+ $nick sets mode : $1- | !haltdef }
+CTCP *:*:*: { 
+!haltdef | !.dll $dlls(kalamngy) option4 $1- | echo -a $ts($active) 02CTCP received from: $nick $+ 12:2 $1- | :error | !.dll $dlls(kalamngy) error }
+on *:CTCPREPLY:*: { echo -a $ts($active) 2CTCP reply14:2 $nick $+ 12:2 $1- | !haltdef }
+on ^*:SNOTICE:*User does not accept private messages: { 
+  echo -a $tslong($active) ;:9 06 $+ $1-
+  !haltdef
+}
+on ^*:SNOTICE:*You are now restricted to talking in*: { 
+  echo $remove($8,:) $tslong($remove($8,:)) ;:9 06 $+ $1-
+  !haltdef
+}
+on ^*:SNOTICE:*You were forced to join*: { 
+  echo $7 $tslong($7) ;:9 06 $+ $2-
+  !haltdef
+}
+on ^*:SNOTICE:*tried to kick you from channel*: { 
+  !haltdef
+  notifyinfo $3-
+  echo $10 $tslong($10) ;:9 06 $+ $3-
+  if ($active != $10) { echo -a $tslong($active) ;:9 06 $+ $3- }
+}
+alias ts { 
+  if (!$hget(gettime)) { hmake gettime 100 }
+  if ($setting(timecolorstatus) != on) return $chr(160)
+  if ($hget(gettime,$1) = $time(HH:nn)) { return  $+ $setting(timecolor) $+ , $+ $setting(timecolor) $+ $time(hh:nnt) $+  | !halt }
+  elseif ($hget(gettime,$1) != $time(HH:nn)) { hadd -m gettime $1 $time(HH:nn) | return 0, $+ $setting(timecolor) $+ $time(hh:nnt) $+  | !halt }
+}
+alias tslong { 
+  return $ts($1) $+ $str($chr(160),22) | !halt 
+}
+alias cm { 
+  var %hum = :6:
+  if ($left($nick($2,$1,a,r).pnick,1) == ~) { %hum = :1: }
+  if ($left($nick($2,$1,a,r).pnick,1) == &) { %hum = :2: }
+  if ($left($nick($2,$1,a,r).pnick,1) == @) { %hum = :3: } 
+  if ($left($nick($2,$1,a,r).pnick,1) == %) { %hum = :4: } 
+  if ($left($nick($2,$1,a,r).pnick,1) == +) { %hum = :5: } 
+  return %hum $iif(.Staff isin $address($1 ,2),:.) $cn($1,$3)
+}
+alias cn {
+  if (.Passport.Staff isin $address($1 ,2)) return 09 $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport.Pink isin $address($1 ,2)) return $iif($2 != 3,13,13) $+ $1 $+ $iif($2 = 1,$chr(32) :,) 
+  elseif (.Passport.Violet isin $address($1 ,2)) return $iif($2 != 3,11,11) $+ $1 $+ $iif($2 = 1,$chr(32) :,) 
+  elseif (.Passport.Cyan isin $address($1 ,2)) return $iif($2 != 3,10,10) $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport.Blue isin $address($1 ,2)) return $iif($2 != 3,12,12) $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport.Coral isin $address($1 ,2)) return $iif($2 != 3,07,07) $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport.Gold isin $address($1 ,2)) return $iif($2 != 3,08,08) $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport.Purple isin $address($1 ,2)) return $iif($2 != 3,06,06) $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport.Cerise isin $address($1 ,2)) return $iif($2 != 3,15,15) $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport.Red isin $address($1 ,2)) return $iif($2 != 3,04,04) $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport.Green isin $address($1 ,2)) return $iif($2 != 3,03,03) $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport.Maron isin $address($1 ,2)) return $iif($2 != 3,05,05) $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport.Black isin $address($1 ,2)) return $iif($2 != 3,01,01) $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+  elseif (.Passport isin $address($1 ,2)) return $iif($2 != 3,02,02) $+ $1 $+ $iif($2 = 1,$chr(32) :, $+ )
+  else return 14 $+ $1 $+ $iif($2 = 1,$chr(32) :,)
+}
+alias cmME { 
+  var %hum = :6:
+  if ($left($nick($2,$1,a,r).pnick,1) == ~) { %hum = :1: }
+  if ($left($nick($2,$1,a,r).pnick,1) == &) { %hum = :2: }
+  if ($left($nick($2,$1,a,r).pnick,1) == @) { %hum = :3: } 
+  if ($left($nick($2,$1,a,r).pnick,1) == %) { %hum = :4: } 
+  if ($left($nick($2,$1,a,r).pnick,1) == +) { %hum = :5: } 
+  return %hum $iif(.Staff isin $address($1 ,2),:.) $cnME($1,$3)
+}
+alias cnME {
+  if (.Passport.Staff isin $address($1 ,2)) return 09 $+ $1 $+ $iif($2 = 1,.i ,)
+  elseif (.Passport.Pink isin $address($1 ,2)) return $iif($2 != 3,13,13) $+ $1 $+ $iif($2 = 1,.m ,) 
+  elseif (.Passport.Violet isin $address($1 ,2)) return $iif($2 != 3,11,11) $+ $1 $+ $iif($2 = 1,.k ,) 
+  elseif (.Passport.Cyan isin $address($1 ,2)) return $iif($2 != 3,10,10) $+ $1 $+ $iif($2 = 1,.j ,)
+  elseif (.Passport.Blue isin $address($1 ,2)) return $iif($2 != 3,12,12) $+ $1 $+ $iif($2 = 1,.l ,)
+  elseif (.Passport.Coral isin $address($1 ,2)) return $iif($2 != 3,07,07) $+ $1 $+ $iif($2 = 1,.g ,)
+  elseif (.Passport.Gold isin $address($1 ,2)) return $iif($2 != 3,08,08) $+ $1 $+ $iif($2 = 1,.h ,)
+  elseif (.Passport.Purple isin $address($1 ,2)) return $iif($2 != 3,06,06) $+ $1 $+ $iif($2 = 1,.f ,)
+  elseif (.Passport.Cerise isin $address($1 ,2)) return $iif($2 != 3,15,15) $+ $1 $+ $iif($2 = 1,.o ,)
+  elseif (.Passport.Red isin $address($1 ,2)) return $iif($2 != 3,04,04) $+ $1 $+ $iif($2 = 1,.d ,)
+  elseif (.Passport.Green isin $address($1 ,2)) return $iif($2 != 3,03,03) $+ $1 $+ $iif($2 = 1,.c ,)
+  elseif (.Passport.Maron isin $address($1 ,2)) return $iif($2 != 3,05,05) $+ $1 $+ $iif($2 = 1,.e ,)
+  elseif (.Passport.Black isin $address($1 ,2)) return $iif($2 != 3,01,01) $+ $1 $+ $iif($2 = 1,.a ,)
+  elseif (.Passport isin $address($1 ,2)) return $iif($2 != 3,02,02) $+ $1 $+ $iif($2 = 1,.b , $+ )
+  else return 14 $+ $1 $+ $iif($2 = 1,.n ,)
+}
+
+alias jb {
+  if ($ignore($1 $+ !*@*)) return ;:5
+  if (.Passport isin $address($1 ,2)) {
+    if (.Staff isin $address($1 ,2)) return :.
+    elseif (.Passport. isin $address($1 ,2)) return $iif($2 != 3,;:222)
+    else return $iif($2 == 1,:|)
+  }
+}
+alias cs {
+  if ($2 == 1) {
+    return ;:7
+  }
+  if ($2 == 2) {
+    return ;:8
+  }
+  if ($2 == 3) {
+    return ;:9
+  }
+  if ($2 == 4) {
+    ; if (ChanServ == $1) return ;:1
+    return ;:9
+  }
+  if ($2 == 5) {
+    if (.Passport !isin $address($1 ,2)) return 06is: 14Normal Visitor - “«∆— ⁄«œÌ ·Ì” ·Â ’·«ÕÌ« 
+    else {
+      if (.Staff isin $address($1 ,2)) return 06is: 09:. Administrative Staff.
+      elseif (.Passport. isin $address($1 ,2)) return 06is: 03;:222 Subscriber User.
+      else return 06is: 02:| Verified Nickname.
+    }
+  }
+}
+alias findword { 
+  var %nk = $iif($1,$1-,$$?="Search For? - »ÕÀ ⁄‰ø"), %ch = $active
+  if (%ch = Status Window) { var %switch = -swwcpz } 
+  elseif (%ch = Message Window) { var %switch = -dwwcpz } 
+  else { var %switch = -wwcpz %ch }
+  var %window $+(@findword,$rand(00,99))
+  window -k0 %window | filter %switch %window * $+ %nk $+ * | /titlebar %window in Window: %ch  --->  Word: %nk  --->   Matches found: $filtered
+}
+
+alias cf1 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active == #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) { starthelp $snick($active,1) } }
+alias cf2 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active == #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) { stophelp $snick($active,1) } }
+alias cf3 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active ischan) { msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 01 StaffCommand: !kick $active $snick($active,1) } }
+alias cf4 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active ischan) { msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 01 StaffCommand: !host $active $snick($active,1) } }
+alias cf5 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active ischan) { msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 01 StaffCommand: !ban 5 $active $snick($active,1) } }
+alias cf6 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active ischan) { msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 01 StaffCommand: !ban 30 $active $snick($active,1) } } 
+alias cf7 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active ischan) { msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 01 StaffCommand: !ban 60 $active $snick($active,1) } }
+alias cf8 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active ischan) { msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 01 StaffCommand: !ban 120 $active $snick($active,1) } }
+alias cf9 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) { msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 01 StaffCommand: !info $active $iif($active ischan,$snick($active,1),$active) } }
+alias cf10 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active ischan) { msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 01 StaffCommand: !voice $active $snick($active,1) } }
+alias cf11 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active ischan) { msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 01 StaffCommand: !rbanlist $active } }
+alias cf12 { if ($me isop #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) && ($active ischan) && (r !isin $chan($active).mode) { msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 01 StaffCommand: !roomclose $active €—›… „Œ«·›… ·ﬁÊ«‰Ì‰ «·œ—œ‘… } }
+
+alias custommsg { msg $active 01 $iif($active ischan,$snick($active,1),$active) , $1- }
+alias sf1 { custommsg $read($files(welcomes),1) }
+alias sf2 { custommsg $read($files(welcomes),2) }
+alias sf3 { custommsg $read($files(welcomes),3) }
+alias sf4 { custommsg $read($files(welcomes),4) }
+alias sf5 { custommsg $read($files(welcomes),5) }
+alias sf6 { custommsg $read($files(welcomes),6) }
+alias sf7 { custommsg $read($files(welcomes),7) }
+alias sf8 { custommsg $read($files(welcomes),8) }
+alias sf9 { custommsg $read($files(welcomes),9) }
+alias sf10 { custommsg $read($files(welcomes),10) }
+alias sf11 { custommsg $read($files(welcomes),11) }
+alias sf12 { custommsg $read($files(welcomes),12) }
+
+
+alias f1 {
+  EmotionDialog 
+}
+alias f2 {
+  if ($active ischan) {
+    var %x $snick($active,1)
+    var %re $?=" $langs(201) " 
+    kick $active %x ÿ—œ ”—Ì⁄ $iif(%re,- %re)
+  }
+}
+alias f3 {
+  if ($active ischan) {
+    var %x $snick($active,1)
+    var %re $?=" $langs(201) " 
+    ban -ku3600 $active %x 2 ÿ—œ ”—Ì⁄- „ÿ—Êœ ·„œ… ”«⁄… $iif(%re,- %re)
+  }
+}
+alias f4 { 
+  if ($active ischan) { whois $snick($active,1) 
+    if ($window($snick($active,1))) window -a $snick($active,1)
+  }
+  else { whois $active }
+}
+alias f5 ReportDialog
+alias f6 if ($active ischan) mode $active +v $snick($active,1)
+alias f7 if ($active ischan) mode $active +h $snick($active,1)
+alias f8 if ($active ischan) mode $active +o $snick($active,1)
+alias f9 if ($active ischan) amsg $$?=" $langs(198) "
+alias f10 if ($active ischan) ame 6 $$?=" $langs(197) "
+alias f11 list
+alias f12 if ($active ischan) clear $active
+alias fastcmd {
+  echo -a 2***
+  echo -a 2*** $langs(145)
+  echo -a 2***
+  echo -a 2*** F1 : Show Emotion dialog - «ŸÂ«— „—»⁄ «·«Ì„Ê‘‰ Ê«·«‘ﬂ«·
+  echo -a 2*** F2 : Fast kick - ÿ—œ ”—Ì⁄
+  echo -a 2*** F3 : Fast ban - »«‰ ”—Ì⁄ ·„œ… 15 œﬁÌﬁ…
+  echo -a 2*** F4 : Nick info - „⁄·Ê„«  ⁄‰ «·«”„
+  echo -a 2*** F5 : Report - «·«»·«€
+  echo -a 2*** F6 : Fast Star - ‰Ã„… ”—Ì⁄…
+  echo -a 2*** F7 : Fast Host - ÂÊ”  ”—Ì⁄
+  echo -a 2*** F8 : Fast Owner - «Ê‰— ”—Ì⁄
+  echo -a 2*** F9 : Amsg - „”Ã ·Ã„Ì⁄ «·€—›
+  echo -a 2*** F10 : Action - «ﬂ‘‰
+  echo -a 2*** F11 : Room list - ﬁ«∆„… «·—Ê„« 
+  echo -a 2*** F12 : Clear screen - „”Õ «·‘«‘…
+  echo -a 2***
+  echo -a 2*** Staff Fast Commands -  «Œ ’«—«  Œ«’… ··«œ«—…
+  echo -a 2***
+  echo -a 2*** Ctrl+ F1 : Start help - »œ¡ «·„”«⁄œ…
+  echo -a 2*** Ctrl+ F2 : Finish help - «‰Â«¡ «·„”«⁄œ…
+  echo -a 2*** Ctrl+ F3 : Fast kick - ÿ—œ ”—Ì⁄
+  echo -a 2*** Ctrl+ F4 : Fast Host - ÂÊ”  ”—Ì⁄
+  echo -a 2*** Ctrl+ F5 : Ban 5 - ÿ—œ 5 œﬁ«Ìﬁ
+  echo -a 2*** Ctrl+ F6 : Ban 30 - ÿ—œ ‰’ ”«⁄…
+  echo -a 2*** Ctrl+ F7 : Ban 1 hour - ÿ—œ ”«⁄…
+  echo -a 2*** Ctrl+ F8 : Ban 2 hours - ÿ—œ ”«⁄ Ì‰
+  echo -a 2*** Ctrl+ F9 : Nick History - «·«”«„Ì «·”«»ﬁ…
+  echo -a 2*** Ctrl+ F10 : Fast Star - ‰Ã„… ”—Ì⁄…
+  echo -a 2*** Ctrl+ F11 : Clear Room bans - „”Õ «·»«‰ ·Ì” 
+  echo -a 2*** Ctrl+ F12 : Close Room - €·ﬁ «·€—›…
+  echo -a 2***
+  echo -a 2*** Fast editable Reply -  «· —«ÕÌ» «·„Œ ’—… «·”—Ì⁄… - Ì„ﬂ‰ﬂ «· ⁄œÌ· ⁄·ÌÂ« ›Ì «·„·› «·„Œ’Ê’ „‰ ﬁ«∆„… «·«⁄œ«œ  «·⁄·ÊÌ…
+  echo -a 2***
+  echo -a 2*** Shift+ F1 : $read($files(welcomes),1)
+  echo -a 2*** Shift+ F2 : $read($files(welcomes),2)
+  echo -a 2*** Shift+ F3 : $read($files(welcomes),3)
+  echo -a 2*** Shift+ F4 : $read($files(welcomes),4)
+  echo -a 2*** Shift+ F5 : $read($files(welcomes),5)
+  echo -a 2*** Shift+ F6 : $read($files(welcomes),6)
+  echo -a 2*** Shift+ F7 : $read($files(welcomes),7)
+  echo -a 2*** Shift+ F8 : $read($files(welcomes),8)
+  echo -a 2*** Shift+ F9 : $read($files(welcomes),9)
+  echo -a 2*** Shift+ F10 : $read($files(welcomes),10)
+  echo -a 2*** Shift+ F11 : $read($files(welcomes),11)
+  echo -a 2*** Shift+ F12 : $read($files(welcomes),12)
+
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias voiceinfop echo -i40 $active $tslong($active) 6ïïïï $1 Sent a Voice to you on private
+alias voiceinfom echo -i40 $active $tslong($active) 6ïïïï $1 Sent a Voice to you on $2
+on *:text:*:?:{
+  if ($setting(wsounds) == on) {
+    if ( $strip($2) == voice;hi  ) { splay hi.mp3 | voiceinfop $nick } 
+    if ( $strip($2) == voice;byebye  ) { splay byebye.mp3 | voiceinfop $nick } 
+    if ( $strip($2) == voice;buzz  ) { splay buzz.mp3 | voiceinfop $nick }
+    if ( $strip($2) == voice;knock  ) { splay knock.mp3 | voiceinfop $nick }
+  } 
+}
+on 1:TEXT:*:#:{
+  if ($setting(wsounds) == on) && ($3 == $me) {
+    if ( $strip($2) == voice;UmmmMmmMuaah  ) { splay womankiss.mp3 | voiceinfom $nick # } 
+    if ( $strip($2) == voice;xXxXXxXXxXx  ) { splay mankiss.mp3 | voiceinfom $nick # } 
+    if ( $strip($2) == voice;UmmmmmMmmxXxXxXxXxxx  ) { splay kiss.mp3 | voiceinfom $nick # }    
+    if ( $strip($2) == voice;MmUaaahMmUaaahhMmUaaahhh  ) { splay kiss2.mp3 | voiceinfom $nick # }     
+    if ( $strip($2) == voice;Ooh.I.(L)Love(L).You:@  ) { splay Womanlove.mp3 | voiceinfom $nick # }     
+    if ( $strip($2) == voice;I.(L)Love(L).You  ) { splay manlove.mp3 | voiceinfom $nick # }     
+    if ( $strip($2) == voice;Honey  ) { splay love.mp3 | voiceinfom $nick # }
+    if ( $strip($2) == voice;Honeyyyy  ) { splay love2.mp3 | voiceinfom $nick # } 
+    if ( $strip($2) == voice;Hahhahhaaa;24  ) { splay womanlaugh.mp3 | voiceinfom $nick # } 
+    if ( $strip($2) == voice;HhHhHhHhHhHhHh;25  ) { splay manlaugh.mp3 | voiceinfom $nick # } 
+    if ( $strip($2) == voice;HeheheheeeeHahaHa3ha3ha3333ah;25  ) { splay laugh.mp3 | voiceinfom $nick # }    
+    if ( $strip($2) == voice;heeeheheheheeeehehehehee;25  ) { splay laugh2.mp3 | voiceinfom $nick # }     
+    if ( $strip($2) == voice;ooooooooooooooh  ) { splay Womancry.mp3 | voiceinfom $nick # }     
+    if ( $strip($2) == voice;I.Need.You.  ) { splay mancry.mp3 | voiceinfom $nick # }     
+    if ( $strip($2) == voice;Ohhhhhhhhhhhhhhhh;52  ) { splay womanscream.mp3 | voiceinfom $nick # }
+    if ( $strip($2) == voice;O3333hhhh;52  ) { splay manscream.mp3 | voiceinfom $nick # }              
+  }
+  if ($setting(notifywords) == on) {
+    var %i = $lines($files(notifywords $+ $cid2con))
+    while (%i) {
+      if ($wildtok($2-,$read($files(notifywords $+ $cid2con), %i),1,32)) {
+        if ($active != #) { 
+          echo -i40 $active $tslong($active) 6ïïïï 
+          echo -i40 $active $tslong($active) 6ïïïï Notify word:  $+ $read($files(notifywords $+ $cid2con), %i) $+  at # by $Nick said: $2- 
+          echo -i40 $active $tslong($active) 6ïïïï
+          notifyinfo Notify word: $read($files(notifywords $+ $cid2con), %i) $+  at  #  by  $Nick said: $2- 
+        }
+        halt
+      }
+      dec %i
+    }
+  }
+  if (r !isin $chan(#).mode) && ($me isop #) {
+    if ($hget(badword, Status. $+ #) == on) {
+      var %pattern /(.)\1{1,}/g, %text $regsubex(foo,$1- ,%pattern,\1)
+      var %i = $lines($files(badwords))
+      while (%i) {
+        if ($wildtok(%text,$read($files(badwords), %i),1,32)) {
+          ban -ku7200 # $nick 2 Bad Word - „ÿ—Êœ ·«” Œœ«„ «”·Ê» €Ì— ·«∆ﬁ ›Ì «·œ—œ‘…
+          if ($hget(badword, Display) == on) { echo -i40 # $ts($chan) 4Bad Word Match : $read($files(badwords), %i) 4line: %i }
+          halt
+        }
+        dec %i
+      }
+    }
+    if ($hget(repeat, Status. $+ #) == on) {
+      var %repeat = $repeatt(6,3,30,$chan,$nick,$1-)
+      if (%repeat) {
+        ban -u120 # $nick 2
+        msg # 4 $nick $+ , 02  „„‰Ê⁄ «· ﬂ—«— - „„‰Ê⁄ „‰ «·ﬂ «»… ·„œ… œﬁÌﬁ Ì‰
+      }
+    }
+  }
+}
+alias womankiss { splay womankiss.mp3 }
+alias mankiss { splay mankiss.mp3 }
+alias kiss { splay kiss.mp3 }
+alias kiss2 { splay kiss2.mp3 }
+alias womanlove { splay womanlove.mp3 }
+alias manlove { splay manlove.mp3 }
+alias love { splay love.mp3 }
+alias love2 { splay love2.mp3 }
+alias womanlaugh { splay womanlaugh.mp3 }
+alias manlaugh { splay manlaugh.mp3 }
+alias laugh { splay laugh.mp3 }
+alias laugh2 { splay laugh2.mp3 }
+alias womancry { splay womancry.mp3 }
+alias mancry { splay mancry.mp3 }
+alias womanscream { splay womanscream.mp3 }
+alias manscream { splay manscream.mp3 }
+alias buzz { splay buzz.mp3 }
+alias hi { splay hi.mp3 }
+alias byebye { splay byebye.mp3 }
+alias starthelp {
+  if ($active == #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) {
+    mode #„”«⁄œ…-Ê-‘ﬂ«ÊÏ +v $1
+    msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 4 $1 , «Â·« »ﬂ ›Ì €—›… «·„”«⁄œ… - «„«„ﬂ 60 À«‰Ì… ··»œ¡ ›Ì ⁄—÷ «·„Ê÷Ê⁄ «·Œ«’ »ﬂ «Ê „‘ﬂ· ﬂ
+    .timerhelpsys $+ $1 1 60 stophelp $1
+  }
+}
+alias stophelp {
+  if ($1 ison #„”«⁄œ…-Ê-‘ﬂ«ÊÏ) {
+    mode #„”«⁄œ…-Ê-‘ﬂ«ÊÏ -v $1
+    msg #„”«⁄œ…-Ê-‘ﬂ«ÊÏ 4 $1 , ‘ﬂ—« ·“Ì«— ﬂ €—›… «·„”«⁄œ… - ”Ê› Ì „ „€«œ— ﬂ «·€—›… »⁄œ ⁄‘—Ì‰ À«‰Ì…
+  }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias joinautoup {
+  if ($1 == action) {
+    var %a $hget(joinautoup,$2)
+    if (%a) {
+      if (%a == owner) || (%a == host) || (%a == star) { 
+        mode $2 $replace(%a,owner,+o,host,+h,star,+v) $3
+      }
+      if (%a == passport) { 
+        if ($regex($address($3,2),/(Passport)/i)) mode $2 +v $3
+      }
+    }
+  }
+  else {
+    if ($1 == add) { 
+      if (r isin $chan($2).mode) {
+        notifyinfo $langs(119)
+      }
+      else {
+        hadd -m joinautoup $2 $3
+        notifyinfo $langs(133) : $2 $+ . $+ $3
+      }
+    }
+    if ($1 == del) { 
+      hdel joinautoup $2
+      notifyinfo $langs(134) : $2
+    }
+    if ($hget(joinautoup)) .hsave -o joinautoup $files(joinautoup)
+  }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias userlistcheck {
+  if ($hget(userlist,$1 $+ . $+ $2)) { return $hget(userlist,$1 $+ . $+ $2) }
+  if ($hget(userlist,$1 $+ . $+ $address($2,2))) { return $hget(userlist,$1 $+ . $+ $address($2,2)) }
+  else return $false
+}
+alias userlist  {
+  if ($1 == action) {
+    var %a $userlistcheck($2,$3) 
+    if (%a) && ($hget(userlist, Status. $+ $2) == on) {
+      if (%a == owner) || (%a == host) || (%a == star) { 
+        mode $2 $replace(%a,owner,+o,host,+h,star,+v) $3
+      }
+      if (%a == kick) && (($me isop $2) || ($me ishop $2)) { 
+        ban -ku7200 $2 $3 2 Black-Listed
+      }
+    }
+  }
+  else {
+    if ($1 == manage) {
+      if ($window(@userlist-manager)) window -a @userlist-manager
+      else { window -lsk0 @userlist-manager 1 1 0 0 }
+      clear @userlist-manager
+      aline -n 12 @userlist-manager .Status $chr(9) .Details
+      var %i = 1, %x = $hget(userlist,0).item
+      while (%i <= %x) {
+        var %item = $hget(userlist,%i).item, %data = $hget(userlist,%item)
+        aline -n 4 @userlist-manager %data $chr(9) %item 
+        inc %i
+      }
+    }
+    if ($1 == on) { 
+      if (r isin $chan($gettok($2,2,46)).mode) {
+        notifyinfo $langs(119)
+      }
+      else {
+        hadd -m userlist $2 on
+        notifyinfo $langs(120) : $2 : on
+      }
+    }
+    if ($1 == off) { 
+      hadd -m userlist $2 off 
+      notifyinfo $langs(121) : $2 : off
+    }
+    if ($1 == add) { 
+      if (r isin $chan($gettok($2,1,46)).mode) {
+        notifyinfo $langs(119)
+      }
+      else {
+        if ($regex($address($gettok($2,2,46),2),/(Passport)/i)) {
+          hadd -m userlist $gettok($2,1,46) $+ . $+  $address($gettok($2,2,46),2) $3 
+          notifyinfo $langs(122) : $gettok($2,1,46) $+ . $+ $address($gettok($2,2,46),2) : $3
+        }
+        else {
+          hadd -m userlist $2 $3
+          notifyinfo $langs(123) : $2 : $3
+        }
+      }
+    }
+    if ($1 == del) { 
+      if ($hget(userlist, $2)) { 
+        hdel userlist $2
+        notifyinfo $langs(124) : $2 : $3
+      }
+      else {
+        hdel userlist $gettok($2,1,46) $+ . $+ $address($gettok($2,2,46),2)
+        notifyinfo $langs(124) : $gettok($2,1,46) $+ . $+ $address($gettok($2,2,46),2) : $3
+      }
+    }
+    if ($hget(userlist)) .hsave -o userlist $files(userlist)
+  }
+}
+menu @userlist-manager {
+  Delete $gettok($$1-,2,9) >> $gettok($$1-,1,9) : hdel userlist $gettok($$1-,2,9) | userlist manage
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias badword {
+  if ($1 == on) { 
+    if (r isin $chan($gettok($2,2,46)).mode) {
+      notifyinfo $langs(119)
+    }
+    else {
+      hadd -m badword $2 on
+      notifyinfo $langs(125) : $2 : on
+    }
+  }
+  if ($1 == off) { 
+    hadd -m badword $2 off 
+    notifyinfo $langs(126) : $2 : off
+  }
+  if ($hget(badword)) .hsave -o badword $files(badword)
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias repeat {
+  if ($1 == on) { 
+    if (r isin $chan($gettok($2,2,46)).mode) {
+      notifyinfo $langs(119)
+    }
+    else {
+      hadd -m repeat $2 on
+      notifyinfo $langs(127) : $2 : on
+    }
+  }
+  if ($1 == off) { 
+    hadd -m repeat $2 off 
+    notifyinfo $langs(128) : $2 : off
+  }
+  if ($hget(repeat)) .hsave -o repeat $files(repeat)
+}
+alias repeatt {
+  var %t = $hash($strip($6-),32)
+  var %h1 = $+(prot.,$4)
+  var %h2 = $+(repeat.,$5)
+  var %h = $instok($hget(%h1,%h2),%t,$calc($1 + 1),46)
+  if ($numtok(%h,46) == $1) {
+    hadd -mu $+ $3 %h1 %h2 $deltok(%h,1,46)
+  }
+  else {
+    hadd -mu $+ $3 %h1 %h2 %h
+  }
+  if ($matchtok(%h,%t,0,46) == $2) return a
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias whounban {
+  if ($1 == on) { 
+    if (r isin $chan($gettok($2,2,46)).mode) {
+      notifyinfo $langs(119)
+    }
+    else {
+      hadd -m whounban $2 on
+      notifyinfo $langs(129) : $2 : on
+    }
+  }
+  if ($1 == off) { 
+    hadd -m whounban $2 off 
+    notifyinfo $langs(130) : $2 : off
+  }
+  if ($hget(whounban)) .hsave -o whounban $files(whounban)
+}
+on 1:UNBAN:#:{
+  if ($hget(whounban, Status. $+ #) == on) {
+    if (r !isin $chan(#).mode) && ($me isop #) {
+      whounbanned # $banmask
+    }
+  }
+}
+alias whounbanned {
+  var %i 1
+  while ($nick($1,%i)) {
+    var %ni $nick($1,%i)
+    var %ad $address(%ni ,2)
+    if (%ad == $2) {
+      msg $1 4 %ni $+ , 12 Ì„ﬂ‰ﬂ «· ÕœÀ «·«‰
+    }
+    inc %i
+  }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias autojoinadd {
+  write -ds $+ $2 $files(autojoin $+ $1)
+  write $files(autojoin $+ $1) $2
+  notifyinfo $langs(131) : $2
+}
+alias autojoindel {
+  write -ds $+ $2 $files(autojoin $+ $1)
+  notifyinfo $langs(132) : $2
+}
+alias checkversion {
+  sockopen version www.kalamngychat.com 80
+  echo -s 00,15*** $langs(141)
+}
+on *:sockopen:version:{
+  if (!$sockerr) {
+    .timer.connect off
+    sockwrite -n $sockname GET /script/10/update.txt HTTP/1.1
+    sockwrite -n $sockname Connection: close
+    sockwrite -n $sockname Host: $+(www.kalamngychat.com,$str($crlf, 2))
+  }
+}
+on *:sockread:version:{
+  var %buff | sockread %buff
+  tokenize 32 %buff
+  if (port: iswm $1) {
+    set %port $2
+    set %ssl $3
+    set %sslv $4
+  }
+  if (update: iswm $1) {
+    if ($2 == File) set %dfiles $3-
+    if ($2 == Full) {
+      set %newversion $3
+      newversiondialog
+    }
+  }
+  if (channels: iswm $1) {
+    if ($2 != %channels) {
+      set %channels $2
+      write -c $files(autojoin1)
+      write -c $files(autojoin2)
+      var %x = 1, %y = $numtok(%channels,44)
+      while (%x <= %y) {
+        var %s = $gettok(%channels,%x,44)
+        autojoinadd 1 %s
+        autojoinadd 2 %s
+        inc %x
+      }
+    }
+  }
+  if (connect: iswm $1) {
+    echo -s 00,15*** $langs(142)
+    if (%nickenable.1 == on) && (%nickautoconnect.1 == on) {
+      .timer 1 10 scon 1 serverconnect 1
+    }
+    if (%nickenable.2 == on) && (%nickautoconnect.2 == on) {
+      if (%nickenable.1 == on) .timer 1 10 scon 2 serverconnect 2
+      else .timer 1 10 scon 1 serverconnect 2
+    }
+  }
+}
+alias dfiles {
+  .remove $1
+  unset %update.downloadready
+  set %mUnzip $2-
+  sockopen update www.kalamngychat.com 80
+  sockmark update $1
+}
+on *:sockopen:update:{
+  if (!$sockerr) {
+    sockwrite -n $sockname GET /script/10/ $+ $sock($sockname).mark HTTP/1.1
+    sockwrite -n $sockname Accept: */*
+    sockwrite -n $sockname Connection: close 
+    sockwrite -n $sockname Host: $+(www.kalamngychat.com,$str($crlf, 2))
+  }
+}
+on *:sockread:update:{
+  if (%update.downloadready != 1) {
+    var %header
+    sockread %header
+    while ($sockbr) {
+      if (Content-Length: isin %header) { 
+        %update.size = $remove(%header,Content-Length:)
+      }
+      if (%header == $null) { 
+        %update.downloadready = 1
+        break
+      }
+      sockread %header
+    }
+  }
+  else {
+    sockread 4096 &d
+    while ($sockbr) {
+      if ($dialog(NewVersion)) {
+        var %update.perc $round($calc($file($sock($sockname).mark).size / %update.size * 100),0)
+        did -a NewVersion 6 Progress: %update.perc $+ %
+        if (%update.perc == 30) did -a NewVersion 7 ||||||||||||
+        if (%update.perc == 60) did -a NewVersion 7 ||||||||||||
+      }
+      bwrite $sock($sockname).mark -1 -1 &d
+      sockread 4096 &d
+    }
+  }
+}
+on *:sockclose:update:{
+  if ($dialog(NewVersion)) {
+    var %update.perc $round($calc($file($sock($sockname).mark).size / %update.size * 100),0)
+    did -a NewVersion 6 Progress: %update.perc $+ %
+    did -a NewVersion 7 ||||||||||||||||||||||||||||||||||||||||||||||||
+  }
+  unset %update.downloadready
+  unset %update.size
+  unset %dfiles
+  !.dll $dlls(mUnzip) Unzip -od $sock($sockname).mark " $+ $mircdir $+ "
+}
+on *:SIGNAL:mUnzip:{
+  if ($1 == extracted) { 
+    %mUnzip
+    unset %mUnzip
+  }
+  :error | !.dll $dlls(kalamngy) error
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias newversiondialog {
+  if ($dialog(NewVersion)) { dialog -o NewVersion }
+  else { dialog -mho NewVersion NewVersion }
+}
+dialog NewVersion {
+  title "KalamngyChat Updater"
+  size -1 -1 200 125
+  option dbu
+  text "An update has been issued to the Chat mIRC Script", 1, 0 10 200 12, center
+  text "Press Update , to automatically update to the new version", 2, 0 32 200 25, center
+  button "Update", 3, 60 50 75 15
+  text "Or/ Press Download to Manually Download the Full new Version", 4, 0 92 200 25, center
+  button "Download", 5, 60 105 75 15
+  text "---------------------------------------------------------------------------------------------------", 8, 0 82 200 10
+  text "Progress: 0%", 6, 5 72 50 10
+  edit "", 7, 60 72 130 10, read
+}
+on *:DIALOG:NewVersion:init:*: { 
+  did -a $dname 1 $langs(146)
+  did -a $dname 2 $langs(147)
+  did -a $dname 3 $langs(149)
+  did -a $dname 4 $langs(148)
+  did -a $dname 5 $langs(150)
+}
+
+on *:DIALOG:NewVersion:sclick:3: { 
+  dfiles %dfiles
+}
+on *:DIALOG:NewVersion:sclick:5: { 
+  run %newversion
+  unset %newversion
+  exit -n
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+dialog Emotion {
+  title "Emotion Dialog - Press F1 to show"
+  size -1 -1 137 116
+  option dbu
+  icon 1, 0 0 12 12,  $files(emopath) $+ 01.bmp, 0
+  icon 2, 12 0 12 12,  $files(emopath) $+ 02.bmp, 0
+  icon 3, 24 0 12 12,  $files(emopath) $+ 03.bmp, 0
+  icon 4, 37 0 12 12,  $files(emopath) $+ 04.bmp, 0
+  icon 5, 49 0 12 12,  $files(emopath) $+ 05.bmp, 0
+  icon 6, 62 0 12 12,  $files(emopath) $+ 06.bmp, 0
+  icon 7, 74 0 12 12,  $files(emopath) $+ 07.bmp, 0
+  icon 8, 87 0 12 12,  $files(emopath) $+ 08.bmp, 0
+  icon 9, 99 0 12 12,  $files(emopath) $+ 09.bmp, 0
+  icon 10, 112 0 12 12,  $files(emopath) $+ 10.bmp, 0
+  icon 11, 124 0 12 12,  $files(emopath) $+ 11.bmp, 0
+  icon 12, 0 12 12 12,  $files(emopath) $+ 12.bmp, 0
+  icon 13, 12 12 12 12,  $files(emopath) $+ 13.bmp, 0
+  icon 14, 24 12 12 12,  $files(emopath) $+ 14.bmp, 0
+  icon 15, 37 12 12 12,  $files(emopath) $+ 15.bmp, 0
+  icon 16, 49 12 12 12,  $files(emopath) $+ 16.bmp, 0
+  icon 17, 62 12 12 12,  $files(emopath) $+ 17.bmp, 0
+  icon 18, 74 12 12 12,  $files(emopath) $+ 18.bmp, 0
+  icon 19, 87 12 12 12,  $files(emopath) $+ 19.bmp, 0
+  icon 20, 99 12 12 12,  $files(emopath) $+ 20.bmp, 0
+  icon 21, 112 12 12 12,  $files(emopath) $+ 21.bmp, 0
+  icon 22, 124 12 12 12,  $files(emopath) $+ 22.bmp, 0
+  icon 23, 0 24 12 12,  $files(emopath) $+ 23.bmp, 0
+  icon 24, 12 24 12 12,  $files(emopath) $+ 24.bmp, 0
+  icon 25, 24 24 12 12,  $files(emopath) $+ 25.bmp, 0
+  icon 26, 37 24 12 12,  $files(emopath) $+ 26.bmp, 0
+  icon 27, 49 24 12 12,  $files(emopath) $+ 27.bmp, 0
+  icon 28, 62 24 12 12,  $files(emopath) $+ 28.bmp, 0
+  icon 29, 74 24 12 12,  $files(emopath) $+ 29.bmp, 0
+  icon 30, 87 24 12 12,  $files(emopath) $+ 30.bmp, 0
+  icon 31, 99 24 12 12,  $files(emopath) $+ 31.bmp, 0
+  icon 32, 112 24 12 12,  $files(emopath) $+ 32.bmp, 0
+  icon 33, 124 24 12 12,  $files(emopath) $+ 33.bmp, 0
+  icon 34, 0 36 12 12,  $files(emopath) $+ 34.bmp, 0
+  icon 35, 12 36 12 12,  $files(emopath) $+ 35.bmp, 0
+  icon 36, 24 36 12 12,  $files(emopath) $+ 36.bmp, 0
+  icon 37, 37 36 12 12,  $files(emopath) $+ 37.bmp, 0
+  icon 38, 49 36 12 12,  $files(emopath) $+ 38.bmp, 0
+  icon 39, 62 36 12 12,  $files(emopath) $+ 39.bmp, 0
+  icon 40, 74 36 12 12,  $files(emopath) $+ 40.bmp, 0
+  icon 41, 87 36 12 12,  $files(emopath) $+ 41.bmp, 0
+  icon 42, 99 36 12 12,  $files(emopath) $+ 42.bmp, 0
+  icon 43, 112 36 12 12,  $files(emopath) $+ 43.bmp, 0
+  icon 44, 124 36 12 12,  $files(emopath) $+ 44.bmp, 0
+  icon 45, 0 48 12 12,  $files(emopath) $+ 45.bmp, 0
+  icon 46, 12 48 12 12,  $files(emopath) $+ 46.bmp, 0
+  icon 47, 24 48 12 12,  $files(emopath) $+ 47.bmp, 0
+  icon 48, 37 48 12 12,  $files(emopath) $+ 48.bmp, 0
+  icon 49, 49 48 12 12,  $files(emopath) $+ 49.bmp, 0
+  icon 50, 62 48 12 12,  $files(emopath) $+ 50.bmp, 0
+  icon 51, 74 48 12 12,  $files(emopath) $+ 51.bmp, 0
+  icon 52, 87 48 12 12,  $files(emopath) $+ 52.bmp, 0
+  icon 53, 99 48 12 12,  $files(emopath) $+ 53.bmp, 0
+  icon 54, 112 48 12 12,  $files(emopath) $+ 54.bmp, 0
+  icon 55, 124 48 12 12,  $files(emopath) $+ 55.bmp, 0
+  icon 56, 0 60 12 12,  $files(emopath) $+ 56.bmp, 0
+  icon 57, 12 60 12 12,  $files(emopath) $+ 57.bmp, 0
+  icon 58, 24 60 12 12,  $files(emopath) $+ 58.bmp, 0
+  icon 59, 37 60 12 12,  $files(emopath) $+ 59.bmp, 0
+  icon 60, 49 60 12 12,  $files(emopath) $+ 60.bmp, 0
+  icon 61, 62 60 12 12,  $files(emopath) $+ 61.bmp, 0
+  icon 62, 74 60 12 12,  $files(emopath) $+ 62.bmp, 0
+  icon 63, 87 60 12 12,  $files(emopath) $+ 63.bmp, 0
+  icon 64, 99 60 12 12,  $files(emopath) $+ 64.bmp, 0
+  icon 65, 112 60 12 12,  $files(emopath) $+ 65.bmp, 0
+  icon 66, 124 60 12 12,  $files(emopath) $+ 66.bmp, 0
+  icon 67, 0 72 12 12,  $files(emopath) $+ 67.bmp, 0
+  icon 68, 12 72 12 12,  $files(emopath) $+ 68.bmp, 0
+  icon 69, 24 72 12 12,  $files(emopath) $+ 69.bmp, 0
+  icon 70, 37 72 12 12,  $files(emopath) $+ 70.bmp, 0
+  icon 71, 49 72 12 12,  $files(emopath) $+ 71.bmp, 0
+  icon 72, 62 72 12 12,  $files(emopath) $+ 72.bmp, 0
+  icon 73, 74 72 12 12,  $files(emopath) $+ 73.bmp, 0
+  icon 74, 87 72 12 12,  $files(emopath) $+ 74.bmp, 0
+  icon 75, 99 72 12 12,  $files(emopath) $+ 75.bmp, 0
+  icon 76, 112 72 12 12,  $files(emopath) $+ 76.bmp, 0
+  icon 77, 124 72 12 12,  $files(emopath) $+ 77.bmp, 0
+  icon 78, 0 84 12 12,  $files(emopath) $+ 78.bmp, 0
+  icon 79, 12 84 12 12,  $files(emopath) $+ 79.bmp, 0
+  icon 80, 24 84 12 12,  $files(emopath) $+ 80.bmp, 0
+  icon 81, 37 84 12 12,  $files(emopath) $+ 81.bmp, 0
+  icon 82, 49 84 12 12,  $files(emopath) $+ 82.bmp, 0
+  icon 83, 62 84 12 12,  $files(emopath) $+ 83.bmp, 0
+  icon 84, 74 84 12 12,  $files(emopath) $+ 84.bmp, 0
+  icon 85, 87 84 12 12,  $files(emopath) $+ 85.bmp, 0
+  icon 86, 99 84 12 12,  $files(emopath) $+ 86.bmp, 0
+  icon 87, 112 84 12 12,  $files(emopath) $+ 87.bmp, 0
+  icon 88, 124 84 12 12,  $files(emopath) $+ 88.bmp, 0
+  icon 89, 0 96 12 12,  $files(emopath) $+ 89.bmp, 0
+  icon 90, 12 96 12 12,  $files(emopath) $+ 90.bmp, 0
+  icon 91, 24 96 12 12,  $files(emopath) $+ 91.bmp, 0
+  icon 92, 37 96 12 12,  $files(emopath) $+ 92.bmp, 0
+  icon 93, 49 96 12 12,  $files(emopath) $+ 93.bmp, 0
+  icon 94, 62 96 12 12,  $files(emopath) $+ 94.bmp, 0
+  icon 95, 74 96 12 12,  $files(emopath) $+ 95.bmp, 0
+  icon 96, 87 96 12 12,  $files(emopath) $+ 96.bmp, 0
+  icon 97, 99 96 12 12,  $files(emopath) $+ 97.bmp, 0
+  icon 98, 112 96 12 12,  $files(emopath) $+ 98.bmp, 0
+  icon 99, 124 96 12 12,  $files(emopath) $+ 99.bmp, 0
+  edit "", 100, 1 137 135 11, autohs
+  button "more", 101, 0 108 136 8
+  check "bold", 102, 50 127 23 8
+  check "italic", 103, 75 127 23 8
+  check "underline", 104, 101 127 35 8
+  button "Clipboard", 106, 7 149 32 10
+  button "Topic", 107, 47 149 37 10
+  button "Input", 108, 92 149 37 10, default
+  check "direct send", 109, 6 127 39 8
+  icon 105, 15 118 7 7,  $files(emopath) $+ C01.bmp, 0, noborder
+  icon 110, 22 118 7 7,  $files(emopath) $+ C02.bmp, 0, noborder
+  icon 111, 29 118 7 7,  $files(emopath) $+ C03.bmp, 0, noborder
+  icon 112, 36 118 7 7,  $files(emopath) $+ C04.bmp, 0, noborder
+  icon 113, 43 118 7 7,  $files(emopath) $+ C05.bmp, 0, noborder
+  icon 114, 50 118 7 7,  $files(emopath) $+ C06.bmp, 0, noborder
+  icon 115, 57 118 7 7,  $files(emopath) $+ C07.bmp, 0, noborder
+  icon 116, 64 118 7 7,  $files(emopath) $+ C08.bmp, 0, noborder
+  icon 117, 71 118 7 7,  $files(emopath) $+ C09.bmp, 0, noborder
+  icon 118, 78 118 7 7,  $files(emopath) $+ C10.bmp, 0, noborder
+  icon 119, 85 118 7 7,  $files(emopath) $+ C11.bmp, 0, noborder
+  icon 120, 92 118 7 7,  $files(emopath) $+ C12.bmp, 0, noborder
+  icon 121, 99 118 7 7,  $files(emopath) $+ C13.bmp, 0, noborder
+  icon 122, 106 118 7 7,  $files(emopath) $+ C14.bmp, 0, noborder
+  icon 123, 113 118 7 7,  $files(emopath) $+ C15.bmp, 0, noborder
+}
+on *:DIALOG:Emotion:init:*: { 
+  !.dll $dlls(colorcombo) COMBO Emotion 105
+  did -a $dname 101 $langs(175)
+  did -a $dname 102 $langs(94)
+  did -a $dname 103 $langs(95)
+  did -a $dname 104 $langs(96)
+  did -a $dname 106 $langs(176)
+  did -a $dname 107 $langs(177)
+  did -a $dname 108 $langs(178)
+  did -a $dname 109 $langs(180)
+  loademofont
+  if (%EmotionDialogoptions) { 
+    dialog -s Emotion $dialog(Emotion).x $dialog(Emotion).y 274 323
+    did -b $dname 101,107,108,109
+    did -a $dname 101 $langs(179)
+  }
+}
+on *:DIALOG:Emotion:sclick:101: { 
+  if (!%EmotionDialogmore) {
+    dialog -s Emotion $dialog(Emotion).x $dialog(Emotion).y 274 323
+    did -a $dname 101 $langs(179)
+    set %EmotionDialogmore on
+    loademofont
+  }
+  else {
+    dialog -s Emotion $dialog(Emotion).x $dialog(Emotion).y 274 233
+    did -a $dname 101 $langs(175)
+    unset %EmotionDialogmore
+  }
+}
+on *:DIALOG:Emotion:sclick:106: { 
+  if ($did(100)) clipboard $did(100)
+  loademofont
+}
+on *:DIALOG:Emotion:sclick:107: {
+  if ($did(100)) topic $active $setting(finalcolor) $did(100)
+  loademofont
+}
+on *:DIALOG:Emotion:sclick:108: {
+  if ($did(100)) {
+    if ($did(109).state) {
+      fixedmsg $active $did(100)
+    }
+    if (!$did(109).state) editbox -apf1 $did(100)
+  }
+  loademofont
+}
+on *:DIALOG:Emotion:sclick:109: { 
+  loademofont
+}
+on *:DIALOG:Emotion:sclick:102: {
+  did -af $dname 100 
+}
+on *:DIALOG:Emotion:sclick:103: {
+  did -af $dname 100 	
+}
+on *:DIALOG:Emotion:sclick:104: {
+  did -af $dname 100 
+}
+on *:DIALOG:Emotion:sclick:*: {
+  if (!%EmotionDialogmore) && (!%EmotionDialogoptions) {
+    if ($did isnum 1-9) editbox -apf1 $editbox($active) ;0 $+ $did
+    if ($did isnum 10-99) editbox -apf1 $editbox($active) ; $+ $did
+  }
+  else {
+    if ($did isnum 1-9) did -raf $dname 100 $did(100) ;0 $+ $did
+    if ($did isnum 10-99) did -raf $dname 100 $did(100) ; $+ $did
+  }
+  if ($did == 105) did -af $dname 100 01
+  if ($did == 110) did -af $dname 100 02
+  if ($did == 111) did -af $dname 100 03
+  if ($did == 112) did -af $dname 100 04
+  if ($did == 113) did -af $dname 100 05
+  if ($did == 114) did -af $dname 100 06
+  if ($did == 115) did -af $dname 100 07
+  if ($did == 116) did -af $dname 100 08
+  if ($did == 117) did -af $dname 100 09
+  if ($did == 118) did -af $dname 100 10
+  if ($did == 119) did -af $dname 100 11
+  if ($did == 120) did -af $dname 100 12
+  if ($did == 121) did -af $dname 100 13
+  if ($did == 122) did -af $dname 100 14
+  if ($did == 123) did -af $dname 100 15
+}
+alias loademofont {
+  if ($setting(bold) == on) did -c Emotion 102
+  if ($setting(italic) == on) did -c Emotion 103
+  if ($setting(underline) == on) did -c Emotion 104
+  if ($setting(bold) != on) did -u Emotion 102
+  if ($setting(italic) != on) did -u Emotion 103
+  if ($setting(underline) != on) did -u Emotion 104
+  did -rf Emotion 100
+}
+alias EmotionDialog {
+  if ($dialog(Emotion)) { dialog -x Emotion }
+  else { 
+    unset %EmotionDialogmore
+    unset %EmotionDialogoptions
+    if ($1 == options) set %EmotionDialogoptions on
+    dialog -mh Emotion Emotion
+  }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+raw 432:*:{
+  haltdef
+}
+raw 311:*:{
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 1___[Nick Info: $2 $+ ] -------------------------------------------------------------ï
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Nick: $cn($2,3) $cs($2,5)
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Passport/Ip:1 $3 $+ 14 $+ @ $+ 01 $+ $4
+  if (.Passport !isin $4) { hadd -m whoischecker $1 on }
+  var %clone = $checkclones($2)
+  if (%clone != $null) echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Clones:1 ( $+ $numtok(%clone,44) $+ ) user / %clone
+  haltdef
+}
+raw 312:*:{ haltdef }
+raw 313:*: {
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Network Info:1 $3 $4 $5 $6 $7 $8 $9
+}
+raw 314:*:{
+  echo 
+}
+raw 352:*:{
+  haltdef
+}
+raw 315:*:{
+  haltdef
+}
+raw 314:*:{
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 2Ø∞--------------------------------------------------------------------------------ï  
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Nick: $cn($2,3) $cs($2,5)
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Ident@Ip:1 $3 $+ 14 $+ @ $+ 01 $+ $4
+  if (.Passport !isin $4) { hadd -m whoischecker $1 on }
+  var %clone = $checkclones($2)
+  if (%clone != $null) echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Clones:1 ( $+ $numtok(%clone,44) $+ ) user / %clone
+  haltdef
+}
+raw 317:*:{
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Connect Time:1 $asctime($4) / $duration($calc($ctime - $4))
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Idle:1 $duration($3)
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 
+}
+raw 318:*:{
+  if ($hget(whoischecker,$2) == on)  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Warning: This nick is on NO channel ..  Õ–Ì—: Â–« «·«”„ ·« Ì Ê«Ãœ ›Ì «Ì €—›… «‰ »Â „‰ «·«”«„Ì «·„“Ì›…
+  haltdef
+}
+raw 319:*:{
+  haltdef
+  if ($hget(whoischecker,$2)) hdel whoischecker $2 
+  var %% = $0
+  while (%% > 2) {
+    var %c = $iif($me ison $mid($eval($+($,%%),2),$pos($eval($+($,%%),2),$chr(35))),$+($chr(2),$eval($+($,%%),2),$chr(2)),$+(1,$eval($+($,%%),2),)) %c
+    dec %%
+  }
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Channels: %c
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Channels: $2 is on $comchan($2,0) common channels with me.
+  haltdef 
+}
+
+raw 338:*:{
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Real Ip:01 $4 $5 $6
+}
+raw 320:*:{
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Swhois:1 $2-
+}
+raw 330:*: {
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Login:1 $2  $4 $5 $6 $7 $3
+  halt
+}
+raw 344:*: {
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06SSL:1 Yes
+}
+raw 378:*:{
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Real Ip:01 $3 $4 $5 $6 $7
+}
+raw 379:*:{
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Modes:01 $6
+}
+raw 307:*:{
+  haltdef
+}
+raw 671:*:{
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Connection:1 $3-
+}
+raw 276:*:{
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Client :1 $3 $4 $5 $6 $7
+}
+raw 327:* {
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Client Info:1 Java User
+  halt
+}
+raw 301:*: {
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Away Msg: ( $+ $3- $+ )
+}
+raw 310:*: {
+  haltdef
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9 06Ircop:1 $3 $4 $5 $6  
+}
+raw 335:*: {
+  echo -i40 $iif($window($2),$2,$active) $tslong($iif($window($2),$2,$active)) ;:9  06Bot:1 Yes (+B).  
+  halt
+}
+alias checkclones {
+  if ($ial($address($1,2),0) == 1) return
+  var %nickler = 0 | var %clone = $1
+  while (%nickler < $ial($address($1,2),0)) { inc %nickler | var %clone = $addtok(%clone,$ial($address($1,2),%nickler).nick, 44) }
+  return %clone
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias UrlEncode return $regsubex($1-,/([^\d\w])/g,$+(%,$base($asc(\t),10,16)))
+alias Udecode { 
+  var %t $replace($1-,\U,%)
+  return $regsubex(%t,/%([A-Fa-f0-9]{4})/g,$UTF8($base(\t,16,10))) 
+}
+alias UTF8 {
+  if ($version >= 7) return $chr($1)
+  else {
+    var %x $base($1,10,2),%y $len(%x)
+    if ($1 < 161) { return $chr($1) }
+    elseif (%y < 12) { return $+($shift(11000000,$left(%x,-6)),$shift(10000000,$right(%x,6))) }
+    elseif (%y < 17) { return $+($shift(11100000,$left(%x,-12)),$shift(10000000,$mid(%x,-12,6)),$shift(10000000,$right(%x,6))) }
+    elseif (%y < 22) {
+      return $+($shift(11110000,$left(%x,-18)),$shift(10000000,$mid(%x,$iif(%y < 18,$+(-,%y),-18),6)),$shift(10000000,$mid(%x,-12,6)),$shift(10000000,$right(%x,6)))
+    }
+  }
+}
+alias -l shift {
+  if ($2) { return $chr($base($+($left($1,$+(-,$len($2))),$2),2,10)) }
+  else { return $chr($base($1,2,10)) }
+}
+alias translate {
+  :resock
+  var %sname translate. $+ $1 $+ . $+ $r(1,99999)
+  if ($sock(%sname)) goto resock
+  sockopen -e %sname translation.babylon-software.com 443
+  sockmark %sname $2 $+ : $+ $4 $+ : $+ $3 $+ : $+ $UrlEncode($utfencode($4-))
+}
+on *:SOCKOPEN:translate.*:{
+  sockwrite -n $sockname GET /translate/babylon.php?v=1.0&q= $+ $gettok($sock($sockname).mark,4-,58) $+ &langpair=15%7C0&callback=b&context=t
+  sockwrite -n $sockname Host: translation.babylon-software.com
+  sockwrite -n $sockname
+}
+on *:SOCKREAD:translate.*:{
+  var %type $gettok($sockname,2,46)
+  sockread 4096 &d
+  if ($regex($bvar(&d,1,$bvar(&d,0)).text ,/("translatedText":")(.*)("}, 200,)/)) {
+    var %nick $gettok($sock($sockname).mark,2,58)
+    var %chan $gettok($sock($sockname).mark,1,58)
+    var %txt $remove($regml(2),\")
+    var %trannick $Udecode($gettok(%txt,1,58))
+    var %trantext $Udecode($gettok(%txt,2-,58))
+    var %newnick $replace($cm(%nick,%chan,1),%nick,%trannick)
+    var %method $gettok($sock($sockname).mark,3,58)
+    if (%method == TranslatedNickname) echo %chan [Tran] $+ %newnick 0,1 %method
+    elseif (%method == action) echo %chan [Tran] $+ :6: 6 $+ %trannick %method %trantext
+    elseif (%method == kick) echo %chan [Tran]  4 $+ %trantext
+    elseif (%method == notice) echo %chan [Tran] $+ :6: 6 $+ %trannick %trantext
+    else echo %chan [Tran] $+ %newnick %method %trantext
+  }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias translate3 {
+  :resock
+  var %sname translate3. $+ $1 $+ . $+ $r(1,99999)
+  if ($sock(%sname)) goto resock
+  sockopen -e %sname api.reverso.net 443
+  sockmark %sname $2 $+ : $+ $4 $+ : $+ $3 $+ : $utfencode($5-)
+}
+on *:SOCKOPEN:translate3.*:{
+  var %data1 ","from":"eng","to":"ara","format":"text","options":{"origin":"reversomobile","sentenceSplitter":false,"contextResults":true,"languageDetection":false}}
+  var %data $+({"input":",$gettok($sock($sockname).mark,4-,58),%data1)
+  sockwrite -n $sockname POST /translate/v1/translation HTTP/1.1
+  sockwrite -n $sockname Host: api.reverso.net
+  sockwrite -n $sockname Content-Length: $len(%data)
+  sockwrite -n $sockname Accept: */*
+  sockwrite -n $sockname Accept-Language: en-us $+ $crlf $+ User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36
+  sockwrite -n $sockname origin: https://www.reverso.net
+  sockwrite -n $sockname referer: https://www.reverso.net/
+  sockwrite -n $sockname Content-Type: application/json; charset=UTF-8
+  sockwrite -n $sockname $+($crlf,%data)
+}
+on *:SOCKREAD:translate3.*:{
+  sockread 4096 &d
+  var %start = $bfind(&d,1,"translation").text
+  var %end = $bfind(&d,1,engines").text
+  var %data $bvar(&d,%start, $calc(%end - %start)).text
+  if ($regex(%data ,/("translation")(.*)(")/)) {
+    var %chan $gettok($sock($sockname).mark,1,58)
+    fixedmsg %chan $utfdecode($right($left($regml(2),-3),-3))
+  }
+}
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+alias dcx {
+  if ($isid) returnex $dll($scriptdirdcx.dll,$1,$2-)
+  else dll " $+ $scriptdirdcx.dll" $1 $2-
+}
+alias udcx {
+  if ($dcx(IsUnloadSafe)) $iif($menu, .timer 1 0) dll -u dcx.dll
+  else echo 4 -qmlbfti2 [DCX] Unable to Unload Dll.
+}
+alias xdid {
+  if ( $isid ) returnex $dcx( _xdid, $1 $2 $prop $3- )
+  dcx xdid $2 $3 $1 $4-
+}
+alias xdialog {
+  if ( $isid ) returnex $dcx( _xdialog, $1 $prop $2- )
+  dcx xdialog $2 $1 $3-
+}
+alias xpop {
+  if ( $isid ) returnex $dcx( _xpop, $1 $prop $2- )
+  dcx xpop $2 $1 $3-
+}
+alias xpopup {
+  if ( $isid ) returnex $dcx( _xpopup, $1 $prop $2- )
+  dcx xpopup $2 $1 $3-
+}
+alias xmenubar {
+  if ($isid) returnex $dcx(_xmenubar, $prop $1-)
+  dcx xmenubar $1-
+}
+alias mpopup {
+  dcx mpopup $1 $2
+}
+alias xdock {
+  if ($isid) returnex $dcx( _xdock, $1 $prop $2- )
+  dcx xdock $1-
+}
+alias xtray {
+  if ($isid) returnex $dcx(TrayIcon, $1 $prop $2-)
+  dcx TrayIcon $1-
+}
+alias xstatusbar {
+  !if ($isid) returnex $dcx( _xstatusbar, mIRC $prop $1- )
+  dcx xstatusbar $1-
+}
+alias xtreebar {
+  !if ($isid) returnex $dcx( _xtreebar, mIRC $prop $1- )
+  dcx xtreebar $1-
+}
+alias dcxml dcx dcxml $1-
+alias tab {
+  var %i = 1, %tab
+  while (%i <= $0) {
+    if ($eval($+($,%i),2) != $null) {
+      %tab = $instok(%tab,$eval($+($,%i),2),$calc($numtok(%tab,9) + 1),9)
+    }
+    inc %i
+  }
+  return %tab
+}
+==============
+alias xdc return xdialog -c $dname
+alias tbar1 {
+  window -phBxb +d @counter
+  counter
+  if ($dialog(tbar1)) { dialog -x tbar1 }
+  dialog -mh tbar1 tbar1
+}
+dialog tbar1 {
+  title ""
+  size -1 -1 0 8
+  option dbu
+}
+on *:dialog:tbar1:init:*: {
+  dcx Mark $dname tbar_cb
+  xdialog -g $dname +itn $files(emopath) $+ logo2.jpg
+  xdialog -T $dname +apbfs
+  $xdc 1 image 0 0 125 45 transparent
+  xdid -i $dname 1 +bah $files(emopath) $+ logo.jpg 
+  $xdc 2 image $calc($window(-3).w - 40) 8 30 30 transparent tooltips
+  xdid -i $dname 2 +bah $files(emopath) $+ close.png
+  xdid -T $dname 2 $langs(138)
+  xdid -J $dname 2 +r hand
+  $xdc 4 window $calc($window(-3).w - $calc($window(-1).w * 15 /100)) 0 $calc($window(-1).w * 15 /100 -50) 45  @counter
+  $xdc 6 text 150 5 250 24 transparent tooltips
+  xdid -t $dname 6 $utfencode(ï $langs(167))
+  xdid -f $dname 6 +ab ansi 10 Tahoma
+  xdid -C $dname 6 +t $rgb(255,255,255)
+  xdid -T $dname 6 $langs(167)
+  xdid -J $dname 6 +r hand
+  $xdc 7 text 150 25 150 24 transparent tooltips
+  xdid -t $dname 7 $utfencode(ï $langs(70))
+  xdid -f $dname 7 +ab ansi 10 Tahoma
+  xdid -C $dname 7 +t $rgb(255,255,255)
+  xdid -T $dname 7 $langs(70)
+  xdid -J $dname 7 +r hand
+  .timer 1 0 xdock -m $dialog(tbar1).hwnd +t
+}
+alias tbar2 {
+  window -hBxb +b @info
+  background -t @info $files(emopath) $+ BG-25-40-65.bmp
+  if ($dialog(tbar2)) { dialog -x tbar2 }
+  dialog -mh tbar2 tbar2
+}
+dialog tbar2 {
+  title ""
+  size -1 -1 0 8
+  option dbu
+}
+on *:dialog:tbar2:init:*: {
+  dcx Mark $dname tbar_cb
+  xdialog -g $dname +itn $files(emopath) $+ logo2.jpg
+  xdialog -T $dname +apbfs
+  $xdc 1 image 10 11 24 24 transparent tooltips
+  xdid -i $dname 1 +bah $files(emopath) $+ setting.png
+  xdid -T $dname 1 $langs(1)
+  xdid -J $dname 1 +r hand
+  $xdc 2 image 40 11 24 24 transparent tooltips
+  xdid -i $dname 2 +bah $files(emopath) $+ search.png
+  xdid -T $dname 2 $langs(16)
+  xdid -J $dname 2 +r hand
+  $xdc 3 image 70 11 24 24 transparent tooltips
+  xdid -i $dname 3 +bah $files(emopath) $+ list.png
+  xdid -T $dname 3 $langs(2)
+  xdid -J $dname 3 +r hand
+  $xdc 4 image 100 11 24 24 transparent tooltips
+  xdid -i $dname 4 +bah $files(emopath) $+ clear.png
+  xdid -T $dname 4 $langs(10)
+  xdid -J $dname 4 +r hand
+  $xdc 5 image 130 11 24 24 transparent tooltips
+  xdid -i $dname 5 +bah $files(emopath) $+ info.png
+  xdid -T $dname 5 $langs(12) - $langs(23)
+  xdid -J $dname 5 +r hand
+  $xdc 9 image 160 11 24 24 transparent tooltips
+  xdid -i $dname 9 +bah $files(emopath) $+ radio.png
+  xdid -T $dname 9 $langs(157)
+  xdid -J $dname 9 +r hand
+  $xdc 6 image 190 11 24 24 transparent tooltips
+  xdid -i $dname 6 +bah $files(emopath) $+ emotion.png
+  xdid -T $dname 6 $langs(79)
+  xdid -J $dname 6 +r hand
+  $xdc 7 image $calc($window(-3).w - $calc($window(-1).w * 15 /100 - 55)) 5 45 40 transparent tooltips
+  xdid -i $dname 7 +b $files(emopath) $+ translate.jpg
+  xdid -T $dname 7 $langs(137)
+  xdid -J $dname 7 +r hand
+  if (%translationin != on) && (%translationout != on) {
+    xdid -h $dname 7
+  }
+  $xdc 8 image $calc($window(-3).w - $calc($window(-1).w * 15 /100 - 10)) 5 35 35 transparent tooltips
+  xdid -i $dname 8 +bah $files(emopath) $+ alarm2.png
+  xdid -T $dname 8 $langs(136)
+  xdid -J $dname 8 +r hand
+  $xdc 10 window 250 0 $calc($window(-3).w - $calc($window(-1).w * 15 /100) -250) 45 @info
+  .timer 1 0 xdock -m $dialog(tbar2).hwnd +b
+}
+alias tbar_cb { 
+  if ($1 == tbar1) {
+    if ($2 == sclick) {
+      if ($3 == 2) {
+        var %s Status Window
+        if (%s isin $active) {
+          if ($dialog(kalamngy)) { did -a kalamngy $iif($cid2con == 1,58,59) $langs(167) }
+          $iif($scon(0) == 1,exit,window -c @ $+ $window(status window).wid)
+        }
+        elseif ($active ischan) part $active
+        else window -c @ $+ $window($active).wid
+      }
+      if ($3 == 6) connectcmd $cid2con
+      if ($3 == 7) ReportDialog
+    }
+  }
+  if ($1 == tbar2) {
+    if ($2 == sclick) {
+      if ($3 == 1) kalamngysetup $cid2con
+      if ($3 == 2) findword
+      if ($3 == 3) list
+      if ($3 == 4) clear
+      if ($3 == 9) run https://www.kalamngychat.com/radio/index.html
+      if ($3 == 5) {
+        if ($active ischan) channel
+        elseif ($query($active)) whois $active
+      }
+      if ($3 == 6) EmotionDialog 
+      if ($3 == 7) {
+        set %translationin off | notifyinfo *** In Translation Arabic To English DeActivated : off
+        set %translationout off | notifyinfo *** Out Translation English To Arabic DeActivated : off
+        xdid -h tbar2 7
+      }
+      if ($3 == 8) {
+        if (!$xdid(tbar2, 10).visible) {
+          xdid -i tbar2 8 +bah $files(emopath) $+ alarm1.png
+          xdid -s tbar2 10
+        }
+        else {
+          xdid -i tbar2 8 +bah $files(emopath) $+ alarm2.png
+          xdid -h tbar2 10
+        }
+      }
+    }
+  }
+}
+alias notifyinfo {
+  if (!$xdid(tbar2, 10).visible) {
+    xdid -i tbar2 8 +bah $files(emopath) $+ alarm1.png
+    xdid -s tbar2 10
+  }
+  echo -i40 @info 0 $time - $me : $1-
+  .timernotifyinfooff1 1 30 xdid -i tbar2 8 +bah $files(emopath) $+ alarm2.png
+  .timernotifyinfooff2 1 30 xdid -h tbar2 10
+}
+on *:ACTIVE:*: {
+  if ($activecid != $lactivecid) {
+    xdid -t tbar1 6 $utfencode(ï $langs($iif($status == connected,171,167)))
+  }
+  if ($dialog(Emotion)) && (%EmotionDialogmore) { 
+    loademofont
+    did -f Emotion 100
+  }
+  if ($scon(0) > 2) { scon $scon(0) window -c "status window" }
+  counter
+}
+alias counter { 
+  var %active $iif($active = @counter || $active = @info,$lactive,$active)
+  drawfill -r @counter 4270105 255 0 0
+  drawtext -r @counter 16777215 tahoma 15 5 5 $utfencode(%active)
+  if (%active ischan) drawtext -r @counter 16777215 tahoma 15 5 25 $nick(%active,0) User Chatting
+}
